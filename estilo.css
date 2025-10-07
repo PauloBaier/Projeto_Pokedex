@@ -1,0 +1,118 @@
+:root{
+    --fundo-pagina: #AE0336;
+    --barra-navegacao-rodape: #C80036;
+    --vermelho-claro: #FF2C57;
+    --botao: #0C1844;
+    --destaque-links: #FFF600;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Fredoka", sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+}
+body{
+    background-color: var(--fundo-pagina);
+}
+header{
+    width: 100%;
+    height: 100px;
+    border: 2px solid #000000;
+    border-width: 0 0px 2px 0px;
+    border-radius: 0px 0px 10px 10px;
+    background-color: var(--barra-navegacao-rodape);
+}
+h1{
+    text-align: center;
+    -webkit-text-stroke: 2px #000000;
+    font-size: 50px;
+}
+.container-navegacao{
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 30px;
+}
+.item-navegacao-esquerda{
+    flex: 1;
+}
+.item-navegacao-centro{
+    flex: 2;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.item-navegacao-centro a{
+    position: relative;
+    font-weight: bold;
+    text-decoration: none;
+}
+.item-navegacao-centro a:hover{
+    color: var(--destaque-links);
+    animation: aumentar 300ms ease-in-out forwards;
+}
+.item-navegacao-centro a::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    background-color: var(--destaque-links);
+    transition: 300ms ease-in-out;
+}
+.item-navegacao-centro a:hover::after{
+    width: 100%;
+}
+
+.item-navegacao-direita{
+    flex: 1;
+}
+
+#barra-pesquisa{
+    border: none;
+    border-radius: 20px;
+    color: #0C1844;
+    padding-left: 10px;
+    
+}
+#barra-pesquisa:focus{
+    outline: #AE0336;
+}
+
+footer{
+    position: absolute;
+    background-color: var(--barra-navegacao-rodape);
+    bottom: 0px;
+    width: 100%;
+    height: 150px;
+    border-radius: 10px 10px 0 0;
+    border: solid #000000;
+    border-width: 2px 0 0 0;
+}
+footer div{
+    width: 90%;
+    height: 100%;
+    margin-left: 5%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+/* Animação */
+
+@keyframes aumentar{
+    100%{
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+}
