@@ -133,6 +133,18 @@ footer div {
     -webkit-text-stroke: 5px #000000;
 }
 
+#banner-barra-de-busca{
+  padding-left: 10px;
+  border-radius: 20px;
+}
+#ir{
+  width: 60px;
+  border-radius: 30px;
+  font-weight: bold;
+  background-color: #0C1844;
+  
+}
+
 /* Animação */
 
 @keyframes aumentar {
