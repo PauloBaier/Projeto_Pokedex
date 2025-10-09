@@ -1,127 +1,142 @@
 :root {
-  --fundo-pagina: #ae0336;
-  --barra-navegacao-rodape: #c80036;
-  --vermelho-claro: #ff2c57;
-  --botao: #0c1844;
-  --destaque-links: #fff600;
+    --fundo-pagina: #ae0336;
+    --barra-navegacao-rodape: #c80036;
+    --vermelho-claro: #ff2c57;
+    --botao: #0c1844;
+    --destaque-links: #fff600;
 }
+
 * {
-  margin: 0;
-  padding: 0;
-  font-family: "Fredoka", sans-serif;
-  color: #ffffff;
-  font-size: 20px;
+    margin: 0;
+    padding: 0;
+    font-family: "Fredoka", sans-serif;
+    color: #ffffff;
+    font-size: 20px;
 }
+
 body {
-  background-color: var(--fundo-pagina);
+    background-color: var(--fundo-pagina);
 }
+
 header {
-  width: 100%;
-  height: 100px;
-  border: 2px solid #000000;
-  border-width: 0 0px 2px 0px;
-  border-radius: 0px 0px 10px 10px;
-  background-color: var(--barra-navegacao-rodape);
+    width: 100%;
+    height: 100px;
+    border: 2px solid #000000;
+    border-width: 0 0px 2px 0px;
+    border-radius: 0px 0px 10px 10px;
+    background-color: var(--barra-navegacao-rodape);
 }
+
 h1 {
-  text-align: center;
-  -webkit-text-stroke: 2px #000000;
-  font-size: 50px;
+    text-align: center;
+    -webkit-text-stroke: 2px #000000;
+    font-size: 50px;
 }
+
 .container-navegacao {
-  height: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 0 30px;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 30px;
 }
+
 .item-navegacao-esquerda {
-  flex: 1;
+    flex: 1;
 }
+
 .item-navegacao-centro {
-  flex: 2;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+    flex: 2;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
+
 .item-navegacao-centro a {
-  position: relative;
-  font-weight: bold;
-  text-decoration: none;
+    position: relative;
+    font-weight: bold;
+    text-decoration: none;
 }
+
 .item-navegacao-centro a:hover {
-  color: var(--destaque-links);
-  animation: aumentar 300ms ease-in-out forwards;
+    color: var(--destaque-links);
+    animation: aumentar 300ms ease-in-out forwards;
 }
+
 .item-navegacao-centro a::after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  background-color: var(--destaque-links);
-  transition: 300ms ease-in-out;
+    content: "";
+    position: absolute;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    background-color: var(--destaque-links);
+    transition: 300ms ease-in-out;
 }
+
 .item-navegacao-centro a:hover::after {
-  width: 100%;
+    width: 100%;
 }
 
 .item-navegacao-direita {
-  flex: 1;
+    flex: 1;
 }
 
 #barra-pesquisa {
-  border: none;
-  border-radius: 20px;
-  color: #0c1844;
-  padding-left: 10px;
+    border: none;
+    border-radius: 20px;
+    color: #0c1844;
+    padding-left: 10px;
 }
+
 #barra-pesquisa:focus {
-  outline: #ae0336;
+    outline: #ae0336;
 }
 
 footer {
-  position: absolute;
-  background-color: var(--barra-navegacao-rodape);
-  bottom: 0px;
-  width: 100%;
-  height: 150px;
-  border-radius: 10px 10px 0 0;
-  border: solid #000000;
-  border-width: 2px 0 0 0;
+    position: absolute;
+    background-color: var(--barra-navegacao-rodape);
+    bottom: 0px;
+    width: 100%;
+    height: 150px;
+    border-radius: 10px 10px 0 0;
+    border: solid #000000;
+    border-width: 2px 0 0 0;
 }
+
 footer div {
-  width: 90%;
-  height: 100%;
-  margin-left: 5%;
-  display: flex;
-  justify-content: end;
-  align-items: center;
+    width: 90%;
+    height: 100%;
+    margin-left: 5%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
+
 .container-banner-principal {
-  width: 90%;
-  height: 300px;
-  margin-left: 5%;
-  background-image: url("./assets/banner1.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
+    width: 90%;
+    height: 300px;
+    margin-left: 5%;
+    background-image: url("./assets/banner1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
 }
-.container-banner-principal h2{
-  font-size: 100px;
-  letter-spacing: 5px;
-  -webkit-text-stroke: 5px #000000;
+
+.container-banner-principal h2 {
+    font-size: 100px;
+    letter-spacing: 5px;
+    -webkit-text-stroke: 5px #000000;
 }
 
 /* Animação */
 
 @keyframes aumentar {
-  100% {
-    transform: scale3d(1.1, 1.1, 1.1);
-  }
+    100% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
 }
