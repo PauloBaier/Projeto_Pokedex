@@ -4,8 +4,10 @@
     --vermelho-claro: #ff2c57;
     --botao: #0c1844;
     --destaque-links: #fff600;
+    --cor-normal: #665842;
+    --fundo-paginacao: #530018;
 }
-
+/* Padronização de atributos */
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +15,6 @@
     color: #ffffff;
     font-size: 20px;
 }
-
 body {
     background-color: var(--fundo-pagina);
 }
@@ -32,7 +33,11 @@ h1 {
     -webkit-text-stroke: 2px #000000;
     font-size: 50px;
 }
-
+h2{
+    -webkit-text-stroke: 2px #000000;
+    font-size: 40px;
+}
+/* Estilo da barra de navegacao superior */
 .container-navegacao {
     height: 100%;
     display: flex;
@@ -93,10 +98,9 @@ h1 {
     outline: #ae0336;
 }
 
+/* Estilo do Rodapé */
 footer {
-    position: absolute;
     background-color: var(--barra-navegacao-rodape);
-    bottom: 0px;
     width: 100%;
     height: 150px;
     border-radius: 10px 10px 0 0;
@@ -113,6 +117,7 @@ footer div {
     align-items: center;
 }
 
+/* Estilo do banner principal e demais elementos */
 .container-banner-principal {
     width: 90%;
     height: 300px;
@@ -131,6 +136,173 @@ footer div {
     font-size: 100px;
     letter-spacing: 5px;
     -webkit-text-stroke: 5px #000000;
+}
+
+/* estilo Filtros */
+
+/* Div que contem os filtros */
+.filtros{
+    width: 80%;
+    height: 200px;
+    margin: 20px 0;
+    margin-left: 10%;
+    background-color: var(--vermelho-claro);
+    border-radius: 20px;
+    border: 3px solid #000000;
+    
+}
+
+.filtros h2{
+    padding: 5px 30px;
+}
+
+.container-filtro{
+    padding: 10px 30px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.filtro{
+    width: 100px;
+    height: 25px;
+    background-color: gray;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 30px;
+    border: 2px solid #000000;
+    font-size: 22px;
+    font-weight: bold;
+    -webkit-text-stroke: 1px #000000;
+    transition: 100ms ease-in-out;
+}
+.filtro:hover{
+    cursor: pointer;
+    transform: scale3d(1.1, 1.1, 1.1);
+}
+
+/* Seção de paginação */
+.paginacao{
+    width: 80%;
+    margin: 20px 0;
+    margin-left: 10%;
+    border-radius: 20px;
+    background-color: var(--fundo-paginacao);
+    border: 3px solid #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.paginacao-grid-container{
+    width: 890px;
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+/* mudar de pagina(paginacao) */
+.marcacao-pagina{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+#anterior{
+    width: 45px;
+    height: 45px;
+    background-image: url("./assets/seta-esquerda.png");
+    background-size: contain;
+    cursor: pointer;
+}
+#proxima{
+    width: 45px;
+    height: 45px;
+    background-image: url("./assets/seta-direita.png");
+    background-size: contain;
+    cursor: pointer;
+}
+#pagina-atual{
+    font-size: 1.3rem;
+    color: white;
+    width: 25px;
+    background: none;
+    border: none;
+    text-align: center;
+}
+#pagina-atual:focus{
+    outline: none;
+    border: none;
+}
+
+/* Estilização dos cards */
+
+.card{
+    justify-self: center;
+    align-self: center;
+    position: relative;
+    width: 280px;
+    height: 390px;
+    border-radius: 20px;
+    border: 3px solid #000000;
+    transition: 150ms ease-in-out;
+}
+.card:hover{
+    position: relative;
+    transform: translate(0, -10px);
+    box-shadow: 0px 0px 15px #fff600;
+}
+.card h3{
+    position: absolute;
+    bottom: -5px;
+    left: 20px;
+    font-size: 2.2rem;
+    -webkit-text-stroke: 2px #000000;
+    margin-bottom: 30px;
+}
+.tipo-pokemom{
+    text-align: center;
+    font-weight: bold;
+    -webkit-text-stroke: 1px #000000;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    width: 100px;
+    position: absolute;
+    bottom: 85px;
+    left: 20px;
+}
+.card-img-moldura{
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    border-radius: 20px;
+    top: 18.5px;
+    left: 18.5px;
+    border: 3px solid #000000;
+}
+.card-img-moldura img{
+    width: 100%;
+    height: 100%;
+}
+.fav{
+    position: absolute;
+    top:25px;
+    right: 23px;
+    width: 60px;
+    border-radius: 50%;
+    transition: 100ms ease-in-out;
+}
+.fav:hover{
+    box-shadow: 0px 0px 15px #fff600;
+    transform: scale3d(1.1, 1.1, 1.1);
+}
+.true{
+    background-color: #FFFB00;
 }
 
 /* Animação */
