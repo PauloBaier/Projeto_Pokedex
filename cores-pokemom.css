@@ -1,0 +1,164 @@
+/* Estilização que diferencia cada filtro e tipo de Pokemom */
+
+
+.normal{
+    background: var(--cor-normal);
+}.normal .card-img-moldura{
+    background-color: #E7E6DA;
+}
+.normal .tipo-pokemom{
+    background-color: #D7D5BF;
+}
+
+.fire{
+    background: #CC1302;
+}.fire .card-img-moldura{
+    background-color: #FF9B6D;
+}
+.fire .tipo-pokemom{
+    background-color: #FF3E0A;
+}
+
+.fighting{
+    background: #922622;
+}.fighting .card-img-moldura{
+    background-color: #FBCFCD;
+}
+.fighting .tipo-pokemom{
+    background-color: #E6534D;
+}
+
+.psychic{
+    background: #C80E4A;
+}.psychic .card-img-moldura{
+    background-color: #FECCE3;
+}
+.psychic .tipo-pokemom{
+    background-color: #F63E88;
+}
+
+.fairy{
+    background: #813350;
+}.fairy .card-img-moldura{
+    background-color: #F2D8E6;
+}
+.fairy .tipo-pokemom{
+    background-color: #C96B96;
+}
+
+.poison{
+    background: #792F77;
+}.poison .card-img-moldura{
+    background-color: #DE91E1;
+}
+.poison .tipo-pokemom{
+    background-color: #DE91E1;
+}
+
+.ghost{
+    background: #8057AB;
+}.ghost .card-img-moldura{
+    background-color: #DAD3F2;
+}
+.ghost .tipo-pokemom{
+    background-color: #B09ADF;
+}
+
+.steel{
+    background: #615D76;
+}.steel .card-img-moldura{
+    background-color: #D9DAE4;
+}
+.steel .tipo-pokemom{
+    background-color: #8989A8;
+}
+
+.ice{
+    background: #2D6C71;
+}.ice .card-img-moldura{
+    background-color: #BAE7E5;
+}
+.ice .tipo-pokemom{
+    background-color: #BAE7E5;
+}
+
+.flying{
+    background: #5D2AAD;
+}.flying .card-img-moldura{
+    background-color: #DFD8FC;
+}
+.flying .tipo-pokemom{
+    background-color: #8F66EC;
+}
+
+.water{
+    background: #253183;
+}.water .card-img-moldura{
+    background-color: #99B9F7;
+}
+.water .tipo-pokemom{
+    background-color: #6390F0;
+}
+
+.dragon{
+    background: #3F139F;
+}.dragon .card-img-moldura{
+    background-color: #D8D3FF;
+}
+.dragon .tipo-pokemom{
+    background-color: #682BFC;
+}
+
+.eletric{
+    background: #A46A04;
+}.eletric .card-img-moldura{
+    background-color: #F7EC8F;
+}
+.eletric .tipo-pokemom{
+    background-color: #FFEB43;
+}
+
+.bug{
+    background: #687813;
+}.bug .card-img-moldura{
+    background-color: #F0F6A0;
+}
+.bug .tipo-pokemom{
+    background-color: #D0E03B;
+}
+
+.grass{
+    background: #076D0D;
+}.grass .card-img-moldura{
+    background-color: #98FF90;
+}
+.grass .tipo-pokemom{
+    background-color: #1EFE1D;
+}
+
+.ground{
+    background: #9B5022;
+}.ground .card-img-moldura{
+    background-color: #ECD89B;
+}
+.ground .tipo-pokemom{
+    background-color: #D38D2D;
+}
+
+.rock{
+    background: #816327;
+}.rock .card-img-moldura{
+    background-color: #E6E3A2;
+}
+.rock .tipo-pokemom{
+    background-color: #CABA45;
+}
+
+.dark{
+    background: #675041;
+}.dark .card-img-moldura{
+    background-color: #D2CAB6;
+}
+.dark .tipo-pokemom{
+    background-color: #957D5D;
+}
