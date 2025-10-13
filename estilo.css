@@ -115,6 +115,7 @@ button:active{
 
 /* Estilo do Rodapé */
 footer {
+    margin-top: 100px; 
     background-color: var(--barra-navegacao-rodape);
     width: 100%;
     height: 150px;
@@ -151,6 +152,15 @@ footer div {
     font-size: 100px;
     letter-spacing: 5px;
     -webkit-text-stroke: 5px #000000;
+}
+.informativo-Pokedex h2{
+    margin-left: 120px;
+}
+.informativo-Pokedex p {
+    background-color: var(--vermelho-claro);
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 120px;
 }
 
 /* estilo Filtros */
@@ -257,6 +267,12 @@ footer div {
 
 /* Estilização dos cards */
 
+.card-inicial{
+    display: flex;
+    margin-top: 80px;
+    margin-left: 23%;
+    gap: 20px;
+}
 .card{
     justify-self: center;
     align-self: center;
