@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -33,40 +34,42 @@
     </div>
   </header>
 
-  <section class="info-container grass">
-    <div class="pokedex">
+  <section class="info-container">
+    <div class="pokedex grass">
         <div class="pokedex-ui">
-          <div class="moldura-pokedex-ui">
+          <div class="img-moldura moldura-pokedex-ui">
             <img src="">
             <div class="tipo-pokemom">
               <span>Grass</span>
             </div>
           </div>
           <h4>Bulbasaur</h4>
-          <span>HP:</span><span class="hp">45</span><br>
-          <span>Atack:</span><span class="atack">50</span>
+          <div class="stats">
+            <span>HP:</span><span class="hp">45</span><br>
+            <span>Atack:</span><span class="atack">50</span>
+          </div>
         </div>
 
-        <div class="pokedex-info">
+        <div class="pokedex-info grass">
           <h2>Bulbasaur</h2>
-          <span>Weight:</span><span class="weight">6.9KG</span><br>
-          <span>Height:</span><span class="height">0.7M</span><br>
-          <span>Type:</span><span class="type">Grass</span><br>
+          <div><span>Weight:</span><span class="weight">6.9KG</span></div>
+          <div><span>Height:</span><span class="height">0.7M</span></div>
+          <div><span>Type:</span><span class="type">Grass</span></div>
           <h4>Description</h4>
           <p id="descricao">
             A strange seed was planted on its back at birth.The plant sprouts and grows with this POKéMON.
           </p>
-          <div>
+          <div class="evolucoes-container">
             <img id="evo-1" src="">
             <span>-></span>
             <img id="evo-2" src="">
             <span>-></span>
             <img id="evo-3" src="">
           </div>
-          <img class="fav" draggable="false" src="./assets/fav.png">
+          <img class="fav" title="Favoritar" draggable="false" src="./assets/fav.png">
         </div>
     </div>
-    <div class="comparar">
+    <div class="comparar grass  ">
       <h2>Comparar Pokémom</h2>
       <div>
         <input type="text" id="busca-comparacao" placeholder="Buscar">
