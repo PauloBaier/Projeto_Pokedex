@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pokedex</title>
   <link rel="stylesheet" href="./estilo.css">
+  <link rel="stylesheet" href="./cores-pokemom.css">
+  <link rel="stylesheet" href="./destalhes.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
@@ -30,6 +32,48 @@
       </div>
     </div>
   </header>
+
+  <section class="info-container grass">
+    <div class="pokedex">
+        <div class="pokedex-ui">
+          <div class="moldura-pokedex-ui">
+            <img src="">
+            <div class="tipo-pokemom">
+              <span>Grass</span>
+            </div>
+          </div>
+          <h4>Bulbasaur</h4>
+          <span>HP:</span><span class="hp">45</span><br>
+          <span>Atack:</span><span class="atack">50</span>
+        </div>
+
+        <div class="pokedex-info">
+          <h2>Bulbasaur</h2>
+          <span>Weight:</span><span class="weight">6.9KG</span><br>
+          <span>Height:</span><span class="height">0.7M</span><br>
+          <span>Type:</span><span class="type">Grass</span><br>
+          <h4>Description</h4>
+          <p id="descricao">
+            A strange seed was planted on its back at birth.The plant sprouts and grows with this POKéMON.
+          </p>
+          <div>
+            <img id="evo-1" src="">
+            <span>-></span>
+            <img id="evo-2" src="">
+            <span>-></span>
+            <img id="evo-3" src="">
+          </div>
+          <img class="fav" draggable="false" src="./assets/fav.png">
+        </div>
+    </div>
+    <div class="comparar">
+      <h2>Comparar Pokémom</h2>
+      <div>
+        <input type="text" id="busca-comparacao" placeholder="Buscar">
+        <button id="comparar">Comparar</button>
+      </div>
+    </div>
+  </section>
 
   <!-- Rodapé da Página -->
   <footer>
