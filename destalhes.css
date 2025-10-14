@@ -1,1 +1,121 @@
-/* PARA FAZER: */
+.info-container{
+    margin: 30px 0;
+    width: 60%;
+    margin-left: 20%;
+}
+.pokedex{
+    width: 100%;
+    display: flex;
+    border: 4px solid #000000;
+    border-radius: 30px;
+}
+.pokedex-ui{
+    position: relative;
+    width: 50%;
+    height: 0;
+    padding-bottom: 74.7%;
+    background-image: url("./assets/pokedex-ui.png");
+    background-size: contain;
+}
+.stats, .pokedex-ui h4{
+    transform: translate(-50%, -50%);
+}
+.pokedex-ui h4{
+    position: absolute;
+    top: 77.5%;
+    left: 25%;
+    font-size: 1.8vw;
+    -webkit-text-stroke: 2px #000000;
+}
+.moldura-pokedex-ui{
+    position: absolute;
+    display: block;
+    width: 87%;
+    height: 56%;
+    top: 16%;
+    left: 5.5%;
+}
+.tipo-pokemom{
+    position: absolute;
+    border-radius: 150px;
+    height: 8%;
+    width: 30%;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tipo-pokemom span{
+    font-size: 2vw;
+}
+.stats{
+    position: absolute;
+    top: 89%;
+    left: 50%;
+    width: 10vw;
+}
+.stats > *{
+    font-family: "Press Start 2P", system-ui;
+    -webkit-text-stroke: 0.08vw #000000;
+    font-weight: bolder;
+    font-size: 1.2vw;
+    text-shadow: 0px 0px 20px #bbff00;
+}
+.pokedex-info{
+    position: relative;
+    width: 46%;
+    padding: 2%;
+    border-radius: 30px;
+    font-weight: 600;
+}
+.pokedex-info *{
+    font-size: 1.2rem;
+    font-weight: 900;
+    -webkit-text-stroke: 1px #000000;
+    padding: 10px;
+    text-shadow: 0px 2px 5px #000000;
+
+}
+.pokedex-info h2{
+    font-size: 2.5rem;
+    font-weight: 900;
+    -webkit-text-stroke: 3px #000000;
+}
+.evolucoes-container{
+    width: 100%;
+    height: 150px;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.evolucoes-container > img{
+    width: 80px;
+}
+.fav{
+    padding: 0;
+    position: absolute;
+
+}
+#descricao{
+    border-radius: 20px;
+}
+.comparar{
+    width: 400px;
+    margin-left: 34vw;
+    border: 4px solid #000000;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.comparar input{
+    padding-left: 10px;
+    border: 0;
+    outline: 0;
+    border-radius: 50px;
+    color: #000000;
+}
