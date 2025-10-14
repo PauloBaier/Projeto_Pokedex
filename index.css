@@ -1,0 +1,48 @@
+/* Estilo do banner principal e demais elementos */
+.container-banner-principal {
+  position: relative;
+  width: 90%;
+  height: 0;
+  padding-bottom: 20%;
+  margin-left: 5%;
+  background-image: url("./assets/banner1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.container-banner-principal h2 {
+  position: absolute;
+  font-size: 100px;
+  letter-spacing: 5px;
+  -webkit-text-stroke: 5px #000000;
+  top: 20px;
+}
+.container-banner-principal div {
+  position: absolute;
+  width: 550px;
+  top: 130px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+#banner-barra-de-busca {
+  width: 490px;
+  padding-left: 10px;
+  border-radius: 40px;
+}
+.informativo-Pokedex {
+  background-color: var(--vermelho-claro);
+  width: 80%;
+  margin-left: 8%;
+  border-radius: 30px;
+  border: 2px solid #000000;
+  margin-top: 10px;
+  padding: 2%;
+}
+.informativo-Pokedex p {
+  text-align: justify;
+}
