@@ -1,0 +1,19 @@
+.favorito-tela{
+    height: 10vh;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10%;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #000000;
+    border-radius: 20px;
+    width: 400px;
+    background-color: #FF3E0A;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}       
