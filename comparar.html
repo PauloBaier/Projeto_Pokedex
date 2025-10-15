@@ -6,9 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pokedex</title>
   <link rel="stylesheet" href="./estilo.css">
+  <link rel="stylesheet" href="./cores-pokemom.css">
+  <link rel="stylesheet" href="./comparar.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -30,6 +33,83 @@
       </div>
     </div>
   </header>
+
+  <section class="secao-comparacao">
+    <div class="escolha-pokemom">
+      <h2>Comparar Pokémoms:</h2>
+      <div>
+        <div>
+          <h3>Pokemom 1:</h3>
+          <input type="text" id="pokemom-1" placeholder="Pokemom">
+          <button id="btn-pokemom-1">Buscar</button>
+        </div>
+        <div>
+          <h3>Pokemom 2:</h3>
+          <input type="text" id="pokemom-2" placeholder="Pokemom">
+          <button id="btn-pokemom-2">Buscar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="comparar-info">
+      <div class="pokedex-ui grass">
+          <div class="img-moldura moldura-pokedex-ui">
+            <img src="">
+            <div class="tipo-pokemom">
+              <span>Grass</span>
+            </div>
+          </div>
+          <h4>Bulbasaur</h4>
+          <div class="stats">
+            <span>HP:</span><span class="hp">45</span><br>
+            <span>Atack:</span><span class="atack">50</span>
+          </div>
+        </div>
+
+      <div class="visualizacao-comparacao-container">
+        <div class="visualizacao-comparacao">
+          <div class="linhas-comparacao">
+            <h3>Bulbasaur</h3>
+            <h3>Charmander</h3>
+          </div>
+          <div class="linhas-comparacao">
+            <span>Weight: <span>6.9</span>KG</span>>
+            <span class="ganhador">Weight: <span>8.5</span>KG</span>
+          </div>
+          <div class="linhas-comparacao">
+            <span>Height: <span>0.7</span>M</span>
+            <span>Height: <span>0.6</span>M</span>
+          </div>
+          <div class="linhas-comparacao">
+            <span>HP: <span>45</span></span>
+            <span>HP: <span>39</span></span>
+          </div>
+          <div class="linhas-comparacao">
+            <span>Atack: <span>50</span></span>
+            <span>Atack: <span>52</span></span>
+          </div>
+          <div class="linhas-comparacao">
+            <span>Type: <span>Grass</span></span>
+            <span>Type: <span>Fire</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pokedex-ui fire">
+          <div class="img-moldura moldura-pokedex-ui">
+            <img src="">
+            <div class="tipo-pokemom">
+              <span>Fire</span>
+            </div>
+          </div>
+          <h4>Charmander</h4>
+          <div class="stats">
+            <span>HP:</span><span class="hp">45</span><br>
+            <span>Atack:</span><span class="atack">50</span>
+          </div>
+        </div>
+    </div>
+  </section>
 
   <!-- Rodapé da Página -->
   <footer>
