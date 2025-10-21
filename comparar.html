@@ -24,12 +24,19 @@
         <h1>POKEDEX</h1>
       </div>
       <div class="item-navegacao-centro">
-        <a href="index.html">Inicio</a>
-        <a href="favoritos.html">Favoritos</a>
-        <a href="pokemons.html">Pokémons</a>
+        <a id="btn-pesquisar" href=""><img src="./assets/pesquisa-icon.png">Pesquisar</a>
+        <a href="index.html"><img src="./assets/home.png">Inicio</a>
+        <a href="favoritos.html"><img src="./assets/Pokeball.png">Favoritos</a>
+        <a href="pokemons.html"><img src="./assets/pikachu-icon.png">Pokémons</a>
       </div>
       <div class="item-navegacao-direita">
         <input type="text" id="barra-pesquisa" placeholder="Buscar">
+        <div class="btn-menu-nav">
+          <div></div>
+          <div class="menu-direita"></div>
+          <div class="menu-esquerda"></div>
+          <div></div>
+        </div>
       </div>
     </div>
   </header>
@@ -118,5 +125,12 @@
     </div>
   </footer>
 </body>
+
+<script>
+  document.getElementsByClassName('btn-menu-nav')[0].addEventListener('click', function(){
+    document.getElementsByClassName('btn-menu-nav')[0].classList.toggle('show')
+    document.getElementsByClassName('item-navegacao-centro')[0].classList.toggle('mostrar')
+  })
+</script>
 
 </html>
