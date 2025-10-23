@@ -248,13 +248,13 @@ footer div {
 
 .container-card-inicial {
   display: flex;
-  width: 80%;
+  width: 85%;
   height: 500px;
   justify-content: space-evenly;
-  margin-top: 30px;
+  margin: 30px 0;
   border-radius: 30px;
-  margin-left: 10%;
-  padding: 20px;
+  margin-left: 50%;
+  transform: translate(-50%, 0);
   background-color: #530018;
   gap: 40px;
 }
@@ -351,8 +351,8 @@ footer div {
   display: none;
 }
 
-@media screen and (max-width: 600px) {
-  #btn-pesquisar {
+@media screen and (max-width: 900px){
+  #btn-pesquisar{
     display: flex;
   }
   .item-navegacao-centro {
