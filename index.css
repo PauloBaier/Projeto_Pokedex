@@ -60,15 +60,17 @@
 @media screen and (max-width: 1800px){
   .carousel{
     position: relative;
+    overflow: hidden;
   }
   .carousel-item{
     position: absolute;
-    transition: transform 300ms ease-in-out;
+    transition: transform 300ms ease;
   }
   .carousel-item.active{
     transform: translateZ(100px) scale(1.2);
     opacity: 1;
     z-index: 2;
+    transition: 200ms;
   }
 
   .carousel-item.next, .carousel-item.prev{
@@ -94,9 +96,11 @@
 
   #btn-next{
     right: 20px;
+    z-index: 3;
   }
 
   #btn-prev{
     left: 20px;
+    z-index: 3;
   }
 }
