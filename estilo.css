@@ -148,7 +148,6 @@ footer div {
 /* Div que contem os filtros */
 .filtros {
   width: 80%;
-  height: 200px;
   margin: 20px 0;
   margin-left: 10%;
   background-color: var(--vermelho-claro);
@@ -355,9 +354,6 @@ footer div {
   color: black;
 }
 
-.show {
-}
-
 #btn-pesquisar {
   display: none;
 }
@@ -432,6 +428,24 @@ footer div {
   }
   .btn-menu-nav.show .menu-esquerda {
     animation: esquerda 100ms linear forwards;
+  }
+}
+
+@media screen and (max-width: 1490px){
+  .paginacao-grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 1145px){
+  .paginacao-grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 760px){
+  .paginacao-grid-container {
+    grid-template-columns: 1fr;
   }
 }
 
