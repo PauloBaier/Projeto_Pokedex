@@ -42,41 +42,41 @@
   </header>
 
   <section class="info-container">
-    <div class="pokedex grass">
+    <div class="pokedex">
         <div class="pokedex-ui">
           <div class="img-moldura moldura-pokedex-ui">
-            <img src="">
+            <img id="poke-img" src="">
             <div class="tipo-pokemom">
-              <span>Grass</span>
+              <span class="type">Grass</span>
             </div>
           </div>
-          <h4>Bulbasaur</h4>
+          <h4 class="nome">Bulbasaur</h4>
           <div class="stats">
             <span>HP:</span><span class="hp">45</span><br>
             <span>Atack:</span><span class="atack">50</span>
           </div>
         </div>
 
-        <div class="pokedex-info grass">
-          <h2>Single Strike Gigantamax Urshifu</h2>
-          <div><span>Weight:</span><span class="weight">6.9KG</span></div>
-          <div><span>Height:</span><span class="height">0.7M</span></div>
+        <div class="pokedex-info">
+          <h2 class="nome">Single Strike Gigantamax Urshifu</h2>
+          <div><span>Weight:</span><span id="weight">6.9</span>KG</div>
+          <div><span>Height:</span><span id="height">0.7</span>M</div>
           <div><span>Type:</span><span class="type">Grass</span></div>
           <h4>Description</h4>
           <p id="descricao">
             A strange seed was planted on its back at birth.The plant sprouts and grows with this POKéMON.
           </p>
           <div class="evolucoes-container">
-            <img id="evo-1" src="">
+            <img class="evo" src="">
             <span>-></span>
-            <img id="evo-2" src="">
+            <img class="evo" src="">
             <span>-></span>
-            <img id="evo-3" src="">
+            <img class="evo" src="">
           </div>
           <img class="fav" title="Favoritar" draggable="false" src="./assets/fav.png">
         </div>
     </div>
-    <div class="comparar grass">
+    <div class="comparar">
       <h2>Comparar Pokémom</h2>
       <div>
         <input type="text" id="busca-comparacao" placeholder="Buscar">
@@ -99,5 +99,6 @@
     document.getElementsByClassName('item-navegacao-centro')[0].classList.toggle('mostrar')
   })
 </script>
+<script src="./JavaScript/detalhes.js"></script>
 
 </html>

@@ -124,6 +124,11 @@
     border-radius: 50px;
     color: #000000;
 }
+.nome{
+    text-transform: capitalize;
+}.type{
+    text-transform: capitalize;
+}
 
 @media screen and (max-width: 1380px){
     .pokedex-info *{

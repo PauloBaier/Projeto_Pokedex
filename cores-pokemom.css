@@ -109,12 +109,12 @@
     background-color: #682BFC;
 }
 
-.eletric{
+.electric{
     background: #A46A04;
-}.eletric .img-moldura{
+}.electric .img-moldura{
     background-color: #F7EC8F;
 }
-.eletric .tipo-pokemom,.eletric #descricao{
+.electric .tipo-pokemom,.electric #descricao{
     background-color: #FFEB43;
 }
 
