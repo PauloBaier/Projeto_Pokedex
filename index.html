@@ -61,19 +61,19 @@
 
     <section class="container-card-inicial">
       <div class="carousel">
-        <div class="carousel-item next">
-          <div class="card water">
-              <div class="img-moldura">
-                  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png">
-              </div>
-              <div class="tipo-pokemom">
-                <span>Water</span>
-              </div>
-              <h3>Squirtle</h3>
-          </div>
-        </div>
+        <a href="detalhes.html?pokemom=squirtle" class="carousel-item next">
+            <div class="card water">
+                <div class="img-moldura">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png">
+                </div>
+                <div class="tipo-pokemom">
+                  <span>Water</span>
+                </div>
+                <h3>Squirtle</h3>
+            </div>
+        </a>
 
-        <div class="carousel-item prev">
+        <a href="detalhes.html?pokemom=bulbasaur" class="carousel-item prev">
           <div class="card grass">
               <div class="img-moldura">
               <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png">
@@ -83,9 +83,9 @@
             </div>
             <h3>Bulbasaur</h3>
           </div>
-        </div>
+        </a>
 
-        <div class="carousel-item active">
+        <a href="detalhes.html?pokemom=charmander" class="carousel-item active">
           <div class="card fire">
             <div class="img-moldura">
               <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png">
@@ -95,7 +95,8 @@
             </div>
             <h3>Charmander</h3>
           </div> 
-        </div>
+        </a>
+
         <img id="btn-prev" draggable="false" src="./assets/seta-esquerda.png">
         <img id="btn-next" draggable="false" src="./assets/seta-direita.png">
       </div>  
