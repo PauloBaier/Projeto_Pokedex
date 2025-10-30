@@ -6,14 +6,16 @@
 export function criarCard(pokemom){
     const card = document.createElement("div");
     card.innerHTML = `
-        <div class="img-moldura">
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemom.id}.png" onerror="this.onerror=null; this.src='./assets/placeholder.png';">
-        </div>
-        <div class="tipo-pokemom">
-        <span>${pokemom.types.map(t => t.type.name)[0]}</span>
-        </div>
-        <h3>${pokemom.name}</h3>
-        <img class="fav" draggable="false" src="./assets/fav.png">
+        <a href="./detalhes.html?pokemom=${pokemom.name}">
+            <div class="img-moldura">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemom.id}.png" onerror="this.onerror=null; this.src='./assets/placeholder.png';">
+            </div>
+            <div class="tipo-pokemom">
+            <span>${pokemom.types.map(t => t.type.name)[0]}</span>
+            </div>
+            <h3>${pokemom.name}</h3>
+            <img class="fav" draggable="false" src="./assets/fav.png">
+        </a>
     `;
     card.classList.add("card");
     card.classList.add(pokemom.types.map(t => t.type.name)[0]);
