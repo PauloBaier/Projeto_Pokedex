@@ -233,7 +233,7 @@ footer div {
 #pagina-atual {
   font-size: 1.3rem;
   color: white;
-  width: 25px;
+  width: 35px;
   background: none;
   border: none;
   text-align: center;
@@ -248,7 +248,7 @@ footer div {
 .container-card-inicial {
   display: flex;
   width: 85%;
-  height: 500px;
+  height: 600px;
   justify-content: space-evenly;
   margin: 30px 0;
   border-radius: 30px;
@@ -268,7 +268,7 @@ footer div {
   align-self: center;
   position: relative;
   width: 280px;
-  height: 390px;
+  height: 450px;
   border-radius: 20px;
   border: 3px solid #000000;
   transition: 150ms ease-in-out;
@@ -280,7 +280,7 @@ footer div {
 }
 .card h3 {
   position: absolute;
-  bottom: -1%;
+  bottom: 10px;
   left: 20px;
   font-size: 2.2rem;
   -webkit-text-stroke: 2px #000000;
@@ -294,8 +294,8 @@ footer div {
   border-radius: 20px;
   width: 100px;
   position: absolute;
-  bottom: 85px;
-  left: 20px;
+  top: 285px;
+  left: 12px;
 }
 .img-moldura {
   position: absolute;
@@ -303,7 +303,7 @@ footer div {
   aspect-ratio: 1/1;
   border-radius: 20px;
   top: 3%;
-  left: 5%;
+  left: 4%;
   border: 3px solid #000000;
 }
 .img-moldura img {
@@ -444,35 +444,8 @@ footer div {
 }
 
 @media screen and (max-width: 760px){
-  .card{
-    width: 200px;
-    height: 279px;
-  }
-  .card:hover {
-    position: relative;
-    transform: translate(0, -10px);
-    box-shadow: 0px 0px 15px #fff600;
-  }
-  .card h3 {
-    position: absolute;
-    bottom: -5%;
-    left: 20px;
-    font-size: 1.3rem;
-  }
-  .tipo-pokemom {
-    width: 100px;
-    bottom: 55px;
-    left: 15px;
-  }
-  .img-moldura {
-    width: 85%;
-    aspect-ratio: 1/1;
-    top: 4%;
-    left: 50%;
-    transform: translate(-50%, 0);
-  }
-  .fav {
-    width: 45px;
+  .paginacao-grid-container{
+    grid-template-columns: 1fr;
   }
 }
 

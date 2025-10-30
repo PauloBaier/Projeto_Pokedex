@@ -129,6 +129,9 @@
 }.type{
     text-transform: capitalize;
 }
+.img-moldura{
+    transform: translate(0, 0);
+}
 
 @media screen and (max-width: 1380px){
     .pokedex-info *{

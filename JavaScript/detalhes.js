@@ -49,22 +49,30 @@ function carregarInformacoesPokemoms(pokemom){
         .then( resposta => resposta.json())
         .then( resposta => {
             document.getElementById('descricao').textContent = resposta.flavor_text_entries.find(f => f.language.name == 'en').flavor_text;
-            carregarCadeiaDeEvo(resposta.evolution_chain.url)
-            .then(evos => {
-                let evo = [];
-                let htmlEvolucoes = document.getElementsByClassName("evo");
+                carregarCadeiaDeEvo(resposta.evolution_chain.url)
+                .then(evos => {
+                    if(evos){
+                        let evo = [];
+                        let htmlEvolucoes = document.getElementsByClassName("evo");
 
-                evo[0] = evos.chain.species.name;
-                evo[1] = evos.chain.evolves_to[0].species.name;
-                evo[2] = evos.chain.evolves_to[0].evolves_to[0].species.name;
-                
-                Array.from(evo).forEach((ev, index) => {
-                    obterInformacoesPokemom(ev)
-                    .then(dados => {
-                        htmlEvolucoes[index].src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${dados.id}.png`;
-                    });
+                        evo[0] = evos.chain.species.name;
+                        evo[1] = evos.chain.evolves_to[0].species.name;
+                        evo[2] = evos.chain.evolves_to[0].evolves_to[0].species.name;
+                        
+                        Array.from(evo).forEach((ev, index) => {
+                            obterInformacoesPokemom(ev)
+                            .then(dados => {
+                                htmlEvolucoes[index].src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${dados.id}.png`;
+                            })
+                        })
+                    }
+                    else{
+                        throw new Error("Erro");
+                    }
                 })
-            })
+                .catch(() => {
+                    document.getElementsByClassName("evolucoes-container")[0].innerHTML = '<p style="width: 100%; text-align: center;">Evolução Indisponivél</p>';  
+                })
         });
 }
 
