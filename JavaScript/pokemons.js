@@ -5,12 +5,12 @@ let paginaAtual = 0;
 let paginaAtualInput = document.getElementById("pagina-atual");
 let proximo = document.getElementById("proxima");
 let anterior = document.getElementById("anterior");
-
-
+let favoritos = JSON.parse(localStorage.getItem("favoritosPokemons")) || [];
 
 document.addEventListener("DOMContentLoaded", () => {
     paginaAtualInput.value = paginaAtual + 1;
     atualizarContainer();
+
 })
 
 proximo.addEventListener("click", () => {
@@ -39,22 +39,48 @@ paginaAtualInput.addEventListener("change", () => {
     atualizarContainer();
 })
 
-
 function atualizarContainer(){
     container.innerHTML = "";
     carregarListaPokemons(16, 0 +(16 * paginaAtual))
     .then(pokemons => {
-        if(pokemons){
-            pokemons.forEach(pokemom => {
-                carregarPokemom(pokemom)
+
+        if(!pokemons){
+            throw new Error("Não foi possivel carregar pokemons!");
+        }
+        const promises = pokemons.map(p => 
+            carregarPokemom(p)
                 .then(pokemom => {
                     let card = criarCard(pokemom);
                     container.appendChild(card);
                 })
-            })
+            )
+
+        return Promise.all(promises);
+    })
+    .then( () => {
+        let btnsFav = document.getElementsByClassName("fav");
+
+        for(let btn of btnsFav){
+            if(favoritos.includes(btn.id)){
+                btn.classList.add("true");
+            }
         }
-        else{
-            throw new Error("Não foi possivel carregar pokemons!");
+
+        for(let btn of btnsFav){
+
+            btn.addEventListener("click", function(){
+                if(!favoritos.includes(btn.id)){
+                    adicionarPokemomFav(btn.id);
+                    btn.classList.add("true");
+                }
+                else{
+                    removerPokemomFav(btn.id);
+                    btn.classList.remove("true");
+                }
+                
+                console.log(favoritos);
+                
+            })
         }
     })
     .catch((e) => {
@@ -63,4 +89,14 @@ function atualizarContainer(){
         <p style="text-align: center;">Não foi Possível Carregar Pokemons!</p>
         ` 
     })
+}
+
+function adicionarPokemomFav(pokemom){
+    favoritos.push(pokemom);
+    localStorage.setItem("favoritosPokemons", JSON.stringify(favoritos));
+}
+
+function removerPokemomFav(pokemom){
+    favoritos.splice(favoritos.indexOf(pokemom), 1);
+    localStorage.setItem("favoritosPokemons", JSON.stringify(favoritos));
 }
