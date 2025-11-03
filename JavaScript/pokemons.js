@@ -100,3 +100,30 @@ function removerPokemomFav(pokemom){
     favoritos.splice(favoritos.indexOf(pokemom), 1);
     localStorage.setItem("favoritosPokemons", JSON.stringify(favoritos));
 }
+  // Função para filtrar os cards
+  function filtrarFavoritos(tipo) {
+    const cards = document.querySelectorAll('.paginacao-grid-container .card');
+    cards.forEach(card => {
+      if (tipo === 'todos' || card.classList.contains(tipo)) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // Adiciona evento nos filtros
+  document.addEventListener('DOMContentLoaded', function () {
+    const filtros = document.querySelectorAll('.container-filtro .filtro');
+    filtros.forEach(filtro => {
+      filtro.addEventListener('click', function () {
+        // Remove classe ativo de todos
+        filtros.forEach(f => f.classList.remove('ativo'));
+        // Adiciona classe ativo ao clicado
+        this.classList.add('ativo');
+        // Filtra os cards
+        const tipo = this.getAttribute('data-tipo');
+        filtrarFavoritos(tipo);
+      });
+    });
+  });
