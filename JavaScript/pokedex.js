@@ -17,7 +17,7 @@ export function criarCard(pokemom){
                 <h3>${pokemom.name}</h3>
             </div>
         </a>
-        <img class="fav" id="${pokemom.name}" draggable="false" src="./assets/fav.png">
+        <img class="fav" id="${pokemom.name}" draggable="false" src="../assets/fav.png">
     `;
     card.classList.add("card");
     card.classList.add(pokemom.types.map(t => t.type.name)[0]);

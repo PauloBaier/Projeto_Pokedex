@@ -55,7 +55,7 @@
         width: 33%;
         height: 0;
         padding-bottom: 49.3%;
-        background-image: url("./assets/pokedex-ui.png");
+        background-image: url("../assets/pokedex-ui.png");
         background-size: contain;
         border-radius: 24px;
         border: 3px solid #000000;

@@ -220,14 +220,14 @@ footer div {
 #anterior {
   width: 45px;
   height: 45px;
-  background-image: url("./assets/seta-esquerda.png");
+  background-image: url("../assets/seta-esquerda.png");
   background-size: contain;
   cursor: pointer;
 }
 #proxima {
   width: 45px;
   height: 45px;
-  background-image: url("./assets/seta-direita.png");
+  background-image: url("../assets/seta-direita.png");
   background-size: contain;
   cursor: pointer;
 }
@@ -327,33 +327,6 @@ footer div {
   background-color: #fffb00;
 }
 
-/* dicas favotiros */
-.dicas-favoritos {
-  width: calc(80% - 40px);
-  margin: 20px 0;
-  margin-left: 10%;
-  background-color: #ffdb1b;
-  border: 3px solid #000000;
-  border-radius: 20px;
-  color: black;
-  font-weight: bold;
-  font-size: 40px;
-  line-height: 1.5;
-  text-align: justify;
-  padding: 20px;
-  box-shadow: 0px 0px 10px #000000;
-}
-.dicas-favoritos h2 {
-  margin-bottom: 10px;
-  color: black;
-  padding: 20px 0;
-  font-weight: bold;
-  letter-spacing: 3px;
-}
-.dicas-favoritos p {
-  margin-top: 10px;
-  color: black;
-}
 
 #btn-pesquisar {
   display: none;
