@@ -6,6 +6,7 @@ let paginaAtualInput = document.getElementById("pagina-atual");
 let proximo = document.getElementById("proxima");
 let anterior = document.getElementById("anterior");
 let favoritos = JSON.parse(localStorage.getItem("favoritosPokemons")) || [];
+let tipoAtual = "todos";
 
 document.addEventListener("DOMContentLoaded", () => {
     paginaAtualInput.value = paginaAtual + 1;
@@ -41,54 +42,108 @@ paginaAtualInput.addEventListener("change", () => {
 
 function atualizarContainer(){
     container.innerHTML = "";
-    carregarListaPokemons(16, 0 +(16 * paginaAtual))
-    .then(pokemons => {
 
-        if(!pokemons){
-            throw new Error("Não foi possivel carregar pokemons!");
-        }
-        const promises = pokemons.map(p => 
-            carregarPokemom(p)
-                .then(pokemom => {
-                    let card = criarCard(pokemom);
-                    container.appendChild(card);
-                })
-            )
+    if(tipoAtual == "todos"){
+        carregarListaPokemons(16, 0 +(16 * paginaAtual))
+        .then(pokemons => {
 
-        return Promise.all(promises);
-    })
-    .then( () => {
-        let btnsFav = document.getElementsByClassName("fav");
-
-        for(let btn of btnsFav){
-            if(favoritos.includes(btn.id)){
-                btn.classList.add("true");
+            if(!pokemons){
+                throw new Error("Não foi possivel carregar pokemons!");
             }
-        }
+            const promises = pokemons.map(p => 
+                carregarPokemom(p)
+                    .then(pokemom => {
+                        let card = criarCard(pokemom);
+                        container.appendChild(card);
+                    })
+                )
 
-        for(let btn of btnsFav){
+            return Promise.all(promises);
+        })
+        .then( () => {
+            let btnsFav = document.getElementsByClassName("fav");
 
-            btn.addEventListener("click", function(){
-                if(!favoritos.includes(btn.id)){
-                    adicionarPokemomFav(btn.id);
+            for(let btn of btnsFav){
+                if(favoritos.includes(btn.id)){
                     btn.classList.add("true");
                 }
-                else{
-                    removerPokemomFav(btn.id);
-                    btn.classList.remove("true");
+            }
+
+            for(let btn of btnsFav){
+
+                btn.addEventListener("click", function(){
+                    if(!favoritos.includes(btn.id)){
+                        adicionarPokemomFav(btn.id, btn.getAttribute("data-tipo"));
+                        btn.classList.add("true");
+                    }
+                    else{
+                        removerPokemomFav(btn.id);
+                        btn.classList.remove("true");
+                    }
+                    
+                    console.log(favoritos);
+                    
+                })
+            }
+        })
+        .catch((e) => {
+            console.log("ERRO: " + e);
+            container.innerHTML = `
+            <p style="text-align: center;">Não foi Possível Carregar Pokemons!</p>
+            ` 
+        })
+    }
+    else{
+        filtrarPokemons(16, 0 + 16 * paginaAtual, tipoAtual)
+        .then(pokemons => {
+
+            if(!pokemons){
+                throw new Error("Não foi possivel carregar pokemons!");
+            }
+            console.log("passou por aqui");
+            const promises = pokemons.map(p => 
+                carregarPokemom(p)
+                    .then(pokemom => {
+                        let card = criarCard(pokemom);
+                        container.appendChild(card);
+                    })
+                )
+
+            return Promise.all(promises);
+        })
+        .then( () => {
+            let btnsFav = document.getElementsByClassName("fav");
+
+            for(let btn of btnsFav){
+                if(favoritos.includes(btn.id)){
+                    btn.classList.add("true");
                 }
-                
-                console.log(favoritos);
-                
-            })
-        }
-    })
-    .catch((e) => {
-        console.log("ERRO: " + e);
-        container.innerHTML = `
-        <p style="text-align: center;">Não foi Possível Carregar Pokemons!</p>
-        ` 
-    })
+            }
+
+            for(let btn of btnsFav){
+
+                btn.addEventListener("click", function(){
+                    if(!favoritos.includes(btn.id)){
+                        adicionarPokemomFav(btn.id, btn.getAttribute("data-tipo"));
+                        btn.classList.add("true");
+                    }
+                    else{
+                        removerPokemomFav(btn.id);
+                        btn.classList.remove("true");
+                    }
+                    
+                    console.log(favoritos);
+                    
+                })
+            }
+        })
+        .catch((e) => {
+            console.log("ERRO: " + e);
+            container.innerHTML = `
+            <p style="text-align: center;">Não foi Possível Carregar Pokemons!</p>
+            ` 
+        })
+    }
 }
 
 function adicionarPokemomFav(pokemom){
@@ -100,17 +155,6 @@ function removerPokemomFav(pokemom){
     favoritos.splice(favoritos.indexOf(pokemom), 1);
     localStorage.setItem("favoritosPokemons", JSON.stringify(favoritos));
 }
-  // Função para filtrar os cards
-  function filtrarFavoritos(tipo) {
-    const cards = document.querySelectorAll('.paginacao-grid-container .card');
-    cards.forEach(card => {
-      if (tipo === 'todos' || card.classList.contains(tipo)) {
-        card.style.display = '';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  }
 
   // Adiciona evento nos filtros
   document.addEventListener('DOMContentLoaded', function () {
@@ -122,8 +166,19 @@ function removerPokemomFav(pokemom){
         // Adiciona classe ativo ao clicado
         this.classList.add('ativo');
         // Filtra os cards
-        const tipo = this.getAttribute('data-tipo');
-        filtrarFavoritos(tipo);
+        tipoAtual = this.getAttribute('data-tipo');
+        atualizarContainer();
       });
     });
   });
+
+  async function filtrarPokemons(maximoPokemons, offset, tipo){
+    let resposta = await fetch(`https://pokeapi.co/api/v2/type/${tipo}`);
+    resposta = await resposta.json();
+
+    if(!resposta){
+        return [];
+    }
+
+    return (resposta.pokemon.map(p => p.pokemon.name)).slice(offset, offset + maximoPokemons);
+  }

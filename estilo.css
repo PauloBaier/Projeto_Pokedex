@@ -201,6 +201,7 @@ footer div {
 }
 .paginacao-grid-container {
   max-width: 1200px;
+  min-height: 1881.20px;
   margin: 20px 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
