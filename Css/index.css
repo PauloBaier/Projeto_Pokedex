@@ -5,7 +5,7 @@
   height: 0;
   padding-bottom: 20%;
   margin-left: 5%;
-  background-image: url("./assets/banner1.png");
+  background-image: url("../assets/banner1.png");
   background-size: contain;
   background-repeat: no-repeat;
   display: flex;
