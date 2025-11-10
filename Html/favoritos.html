@@ -1,36 +1,49 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br"> <!-- Define o idioma da página como português do Brasil -->
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pokedex</title>
+  <meta charset="UTF-8"> <!-- Garante que os caracteres especiais sejam interpretados corretamente -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade: adapta o layout ao tamanho da tela -->
+  <title>Pokedex</title> <!-- Título exibido na aba do navegador -->
+  
+  <!-- Importação dos arquivos CSS que estilizam a página -->
   <link rel="stylesheet" href="../Css/favoritos.css">
   <link rel="stylesheet" href="../Css/estilo.css">
   <link rel="stylesheet" href="../Css/cores-pokemom.css">
+  
+  <!-- Pré-conexões para acelerar o carregamento das fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Importação da fonte "Fredoka" do Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- Barra de Navegação-Header -->
-
+  <!-- =============================== -->
+  <!-- Barra de Navegação (HEADER) -->
+  <!-- =============================== -->
   <header>
-    <div class="container-navegacao">
+    <div class="container-navegacao"> <!-- Container principal do cabeçalho -->
+      
+      <!-- Lado esquerdo com o nome da Pokedex -->
       <div class="item-navegacao-esquerda">
         <h1>POKEDEX</h1>
       </div>
+
+      <!-- Parte central com os links de navegação -->
       <div class="item-navegacao-centro">
         <a id="btn-pesquisar" href=""><img src="../assets/pesquisa-icon.png">Pesquisar</a>
         <a href="index.html"><img src="../assets/home.png">Inicio</a>
         <a href="favoritos.html"><img src="../assets/Pokeball.png">Favoritos</a>
         <a href="pokemons.html"><img src="../assets/pikachu-icon.png">Pokémons</a>
       </div>
+
+      <!-- Lado direito: campo de busca + menu hambúrguer -->
       <div class="item-navegacao-direita">
-        <input type="text" id="barra-pesquisa" placeholder="Buscar">
-        <div class="btn-menu-nav">
+        <input type="text" id="barra-pesquisa" placeholder="Buscar"> <!-- Campo de pesquisa -->
+        <div class="btn-menu-nav"> <!-- Ícone do menu responsivo -->
           <div></div>
           <div class="menu-direita"></div>
           <div class="menu-esquerda"></div>
@@ -40,52 +53,80 @@
     </div>
   </header>
 
+  <!-- =============================== -->
+  <!-- Seção de Filtros de Pokémon -->
+  <!-- =============================== -->
   <section class="filtros">
-  <h2>Filtrar:</h2>
-  <div class="container-filtro">
-    <div class="filtro normal ativo" data-tipo="todos">Todos</div>
-    <div class="filtro normal" data-tipo="normal">Normal</div>
-    <div class="filtro fire" data-tipo="fire">Fire</div>
-    <div class="filtro water" data-tipo="water">Water</div>
-    <div class="filtro electric" data-tipo="electric">Electric</div>
-    <div class="filtro grass" data-tipo="grass">Grass</div>
-    <div class="filtro ice" data-tipo="ice">Ice</div>
-    <div class="filtro fighting" data-tipo="fighting">Fighting</div>
-    <div class="filtro poison" data-tipo="poison">Poison</div>
-    <div class="filtro ground" data-tipo="ground">Ground</div>
-    <div class="filtro flying" data-tipo="flying">Flying</div>
-    <div class="filtro psychic" data-tipo="psychic">Psychic</div>
-    <div class="filtro bug" data-tipo="bug">Bug</div>
-    <div class="filtro rock" data-tipo="rock">Rock</div>
-    <div class="filtro ghost" data-tipo="ghost">Ghost</div>
-    <div class="filtro dragon" data-tipo="dragon">Dragon</div>
-    <div class="filtro dark" data-tipo="dark">Dark</div>
-    <div class="filtro steel" data-tipo="steel">Steel</div>
-    <div class="filtro fairy" data-tipo="fairy">Fairy</div>
-  </div>
-</section>
+    <h2>Filtrar:</h2>
+    <div class="container-filtro">
+      <!-- Cada "div" representa um botão de filtro de tipo Pokémon -->
+      <div class="filtro normal ativo" data-tipo="todos">Todos</div>
+      <div class="filtro normal" data-tipo="normal">Normal</div>
+      <div class="filtro fire" data-tipo="fire">Fire</div>
+      <div class="filtro water" data-tipo="water">Water</div>
+      <div class="filtro electric" data-tipo="electric">Electric</div>
+      <div class="filtro grass" data-tipo="grass">Grass</div>
+      <div class="filtro ice" data-tipo="ice">Ice</div>
+      <div class="filtro fighting" data-tipo="fighting">Fighting</div>
+      <div class="filtro poison" data-tipo="poison">Poison</div>
+      <div class="filtro ground" data-tipo="ground">Ground</div>
+      <div class="filtro flying" data-tipo="flying">Flying</div>
+      <div class="filtro psychic" data-tipo="psychic">Psychic</div>
+      <div class="filtro bug" data-tipo="bug">Bug</div>
+      <div class="filtro rock" data-tipo="rock">Rock</div>
+      <div class="filtro ghost" data-tipo="ghost">Ghost</div>
+      <div class="filtro dragon" data-tipo="dragon">Dragon</div>
+      <div class="filtro dark" data-tipo="dark">Dark</div>
+      <div class="filtro steel" data-tipo="steel">Steel</div>
+      <div class="filtro fairy" data-tipo="fairy">Fairy</div>
+    </div>
+  </section>
 
+  <!-- =============================== -->
+  <!-- Título da Seção de Favoritos -->
+  <!-- =============================== -->
   <section class="favorito-tela">FAVORITOS</section>
 
+  <!-- =============================== -->
+  <!-- Lista de Favoritos + Paginação -->
+  <!-- =============================== -->
   <section class="paginacao">
       <div class="paginacao-grid-container">
-        
+        <!-- Os cards de Pokémon favoritos serão inseridos aqui via JavaScript -->
       </div>
 
-    
+      <!-- Navegação entre páginas -->
       <div class="marcacao-pagina">
-        <div id="anterior"></div>
-        <div><input type="text" id="pagina-atual" value="1"></div>
-        <div id="proxima"></div>
+        <div id="anterior"></div> <!-- Botão de página anterior -->
+        <div><input type="text" id="pagina-atual" value="1"></div> <!-- Exibe a página atual -->
+        <div id="proxima"></div> <!-- Botão de próxima página -->
       </div>
-    </section>
-<section class="dicas-favoritos">
-    <h2> DICAS SOBRE OS FAVORITOS</h2>
-    <p>Na seção de favoritos da Pokédex, você pode marcar seus Pokémon preferidos para acessá-los rapidamente. Para adicionar um Pokémon aos favoritos, basta clicar no ícone de coração ou estrela ao lado do nome do Pokémon. Uma vez adicionado, ele aparecerá nesta seção para fácil referência. Você também pode remover um Pokémon dos favoritos clicando novamente no ícone. Aproveite para organizar sua coleção e ter seus Pokémon favoritos sempre à mão!
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker.
+  </section>
+
+  <!-- =============================== -->
+  <!-- Seção com texto informativo -->
+  <!-- =============================== -->
+  <section class="dicas-favoritos">
+    <h2>DICAS SOBRE OS FAVORITOS</h2>
+    <p>
+      Na seção de favoritos da Pokédex, você pode marcar seus Pokémon preferidos para acessá-los rapidamente.
+      Para adicionar um Pokémon aos favoritos, basta clicar no ícone de coração ou estrela ao lado do nome.
+      Uma vez adicionado, ele aparecerá nesta seção para fácil acesso.
+      Você também pode remover um Pokémon dos favoritos clicando novamente no ícone.
+
+      <!-- Texto Lorem Ipsum apenas para ocupar espaço e testar layout -->
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+      when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+      It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+      It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+      and more recently with desktop publishing software like Aldus PageMaker.
     </p>
   </section>
-  <!-- Rodapé da Página -->
+
+  <!-- =============================== -->
+  <!-- Rodapé -->
+  <!-- =============================== -->
   <footer>
     <div>
       <h1>POKEDEX</h1>
@@ -93,12 +134,19 @@
   </footer>
 </body>
 
+<!-- =============================== -->
+<!-- Script para menu responsivo -->
+<!-- =============================== -->
 <script>
+  // Adiciona um evento de clique ao botão do menu (hambúrguer)
   document.getElementsByClassName('btn-menu-nav')[0].addEventListener('click', function(){
+    // Alterna a classe que exibe/esconde o menu
     document.getElementsByClassName('btn-menu-nav')[0].classList.toggle('show')
     document.getElementsByClassName('item-navegacao-centro')[0].classList.toggle('mostrar')
   })
 </script>
+
+<!-- Importa o script principal da página -->
 <script src="../JavaScript/favoritos.js" type="module"></script>
 
 </html>

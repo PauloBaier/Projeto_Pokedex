@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
+// Cabeçalho da Página -->
 <head>
+
+  // Metadados Básicos -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pokedex</title>
+
+  // Links para CSS e Fontes -->
   <link rel="stylesheet" href="../Css/estilo.css">
   <link rel="stylesheet" href="../Css/cores-pokemom.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +44,7 @@
     </div>
   </header>
 
+  <!-- Seção de Filtros de Pokémons -->
   <section class="filtros">
     <h2>Filtrar:</h2>
     <div class="container-filtro">
@@ -63,13 +69,13 @@
       <div class="filtro fairy" data-tipo="fairy">Fairy</div>
     </div>
   </section>
-
+// Seção de Exibição dos Pokémons -->
   <section class="paginacao">
       <div class="paginacao-grid-container">
         
       </div>
 
-    
+    //Marcação de Página -->
       <div class="marcacao-pagina">
         <div id="anterior"></div>
         <div><input type="text" id="pagina-atual" value="1"></div>
@@ -84,13 +90,14 @@
     </div>
   </footer>
 </body>
-
+// Script para Menu Responsivo -->
 <script>
   document.getElementsByClassName('btn-menu-nav')[0].addEventListener('click', function(){
     document.getElementsByClassName('btn-menu-nav')[0].classList.toggle('show')
     document.getElementsByClassName('item-navegacao-centro')[0].classList.toggle('mostrar')
   })
 </script>
+// Script Principal da Página -->
 <script src="../JavaScript/pokemons.js" type="module"></script>
 
 </html>
