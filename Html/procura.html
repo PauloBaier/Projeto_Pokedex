@@ -42,6 +42,12 @@
   </header>
 
   <!-- Seção de Filtros de Pokémons -->
+  <section class="pesquisa">
+    <div>
+      <input type="text" id="banner-barra-de-busca" placeholder="Buscar">
+      <button id="ir">Ir</button>
+    </div>
+  </section>
   <section class="filtros">
     <h2>Filtrar:</h2>
     <div class="container-filtro">
@@ -84,14 +90,14 @@
       <h1>POKEDEX</h1>
     </div>
   </footer>
+  <script src="../JavaScript/pesquisa.js"></script>
+  <script>
+    document.getElementsByClassName('btn-menu-nav')[0].addEventListener('click', function () {
+      document.getElementsByClassName('btn-menu-nav')[0].classList.toggle('show')
+      document.getElementsByClassName('item-navegacao-centro')[0].classList.toggle('mostrar')
+    })
+  </script>
+  <script src="../JavaScript/procura.js" type="module"></script>
 </body>
-<script src="../JavaScript/pesquisa.js"></script>
-<script>
-  document.getElementsByClassName('btn-menu-nav')[0].addEventListener('click', function () {
-    document.getElementsByClassName('btn-menu-nav')[0].classList.toggle('show')
-    document.getElementsByClassName('item-navegacao-centro')[0].classList.toggle('mostrar')
-  })
-</script>
-<script src="../JavaScript/pokemons.js" type="module"></script>
 
 </html>

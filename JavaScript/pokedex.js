@@ -3,7 +3,7 @@
     O card é preenchido com as informações do objeto 'pokemom' recebido por parâmetro.
     Retorna o elemento pronto para ser inserido no DOM.
 */
-export function criarCard(pokemom){
+export function criarCard(pokemom) {
     // Cria dinamicamente uma <div> que servirá como o container (card) do Pokémon
     const card = document.createElement("div");
 
@@ -19,8 +19,8 @@ export function criarCard(pokemom){
                 <!-- O atributo onerror substitui a imagem por um placeholder caso o carregamento falhe -->
                 </div>
                 <div class="tipo-pokemom">
-                <!-- Exibe o primeiro tipo do Pokémon (por exemplo: fire, grass, water, etc.) -->
-                <span>${pokemom.types.map(t => t.type.name)[0]}</span>
+                    <!-- Exibe o primeiro tipo do Pokémon (por exemplo: fire, grass, water, etc.) -->
+                    <span>${pokemom.types.map(t => t.type.name)[0]}</span>
                 </div>
                 <!-- Exibe o nome do Pokémon -->
                 <h3>${pokemom.name}</h3>
@@ -45,8 +45,8 @@ export function criarCard(pokemom){
     Função responsável por buscar as informações de um Pokémon
     na PokeAPI, utilizando o nome ou ID informado como parâmetro.
 */
-export async function carregarPokemom(nome){
-    try{
+export async function carregarPokemom(nome) {
+    try {
         // Faz uma requisição HTTP (fetch) para a PokeAPI, usando o nome ou ID
         let pokemom = await fetch(`https://pokeapi.co/api/v2/pokemon/${nome}`);
 
@@ -54,12 +54,12 @@ export async function carregarPokemom(nome){
         pokemom = await pokemom.json();
 
         // Caso o retorno esteja vazio ou inválido, lança um erro personalizado
-        if(!pokemom){throw new Error("Não foi possivel carregar pokemom!")}
+        if (!pokemom) { throw new Error("Não foi possivel carregar pokemom!") }
 
         // Retorna o objeto Pokémon contendo todos os dados (tipos, habilidades, sprites, etc.)
         return pokemom;
     }
-    catch(e){
+    catch (e) {
         // Se ocorrer qualquer erro na requisição ou conversão, ele é exibido no console
         console.log(e)
 
@@ -72,8 +72,8 @@ export async function carregarPokemom(nome){
     Retorna uma array de pokemons com base na quantidade definida no parametro maximoPokemons
     iniciando da posição definida em offset, retorna null em caso de erro.
 */
-export async function carregarListaPokemons(maximoPokemons, offset){
-    try{
+export async function carregarListaPokemons(maximoPokemons, offset) {
+    try {
         // Cria um array vazio que será preenchido com os nomes dos pokémons
         let list = [];
 
@@ -82,7 +82,7 @@ export async function carregarListaPokemons(maximoPokemons, offset){
         const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${maximoPokemons}&offset=${offset}`);
 
         // Caso a resposta da API seja inválida, lança um erro
-        if(!resposta){throw new Error("Não foi póssivel carregar pokemons!")}
+        if (!resposta) { throw new Error("Não foi póssivel carregar pokemons!") }
 
         // Converte a resposta da API para JSON
         const res = await resposta.json();
@@ -96,7 +96,7 @@ export async function carregarListaPokemons(maximoPokemons, offset){
         // Retorna o array final contendo os nomes dos pokémons
         return list;
     }
-    catch{
+    catch {
         // Em caso de erro (ex: problema de conexão ou resposta inválida), retorna null
         return null;
     }

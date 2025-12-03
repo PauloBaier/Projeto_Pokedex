@@ -1,5 +1,5 @@
 // Importa funções utilitárias de outro módulo (pokedex.js)
-import {carregarListaPokemons, carregarPokemom, criarCard} from "./pokedex.js";
+import { carregarListaPokemons, carregarPokemom, criarCard } from "./pokedex.js";
 
 // Seleciona o container principal onde os cards dos pokémons serão exibidos
 const container = document.getElementsByClassName("paginacao-grid-container")[0];
@@ -44,7 +44,7 @@ proximo.addEventListener("click", () => {
 // Evento para o botão “página anterior”
 anterior.addEventListener("click", () => {
     // Impede que a página fique negativa
-    if(paginaAtual > 0){
+    if (paginaAtual > 0) {
         paginaAtual -= 1;
     }
 
@@ -61,10 +61,10 @@ paginaAtualInput.addEventListener("change", () => {
     let valorDigitado = parseInt(paginaAtualInput.value) - 1;
 
     // Verifica se o valor é inválido (NaN ou menor que 1)
-    if(isNaN(valorDigitado) || valorDigitado < 1){
+    if (isNaN(valorDigitado) || valorDigitado < 1) {
         paginaAtual = 0;
     }
-    else{
+    else {
         paginaAtual = valorDigitado;
     }
 
@@ -74,132 +74,131 @@ paginaAtualInput.addEventListener("change", () => {
 });
 
 // Função principal que atualiza os cards de pokémons no container
-function atualizarContainer(){
+function atualizarContainer() {
     // Limpa o conteúdo atual antes de adicionar novos cards
     container.innerHTML = "";
 
     // Se o filtro for "todos", mostra todos os pokémons
-    if(tipoAtual == "todos"){
+    if (tipoAtual == "todos") {
         // Busca uma lista de pokémons (limitando a 16 por página)
-        carregarListaPokemons(16, 0 +(16 * paginaAtual))
-        .then(pokemons => {
-            // Se não conseguiu carregar, dispara um erro
-            if(!pokemons){
-                throw new Error("Não foi possivel carregar pokemons!");
-            }
+        carregarListaPokemons(16, 0 + (16 * paginaAtual))
+            .then(pokemons => {
+                // Se não conseguiu carregar, dispara um erro
+                if (!pokemons) {
+                    throw new Error("Não foi possivel carregar pokemons!");
+                }
 
-            // Cria uma promessa para cada pokémon da lista
-            const promises = pokemons.map(p => 
-                carregarPokemom(p)
-                    .then(pokemom => {
-                        // Cria o card visual e adiciona ao container
-                        let card = criarCard(pokemom);
-                        container.appendChild(card);
-                    })
+                // Cria uma promessa para cada pokémon da lista
+                const promises = pokemons.map(p =>
+                    carregarPokemom(p)
+                        .then(pokemom => {
+                            // Cria o card visual e adiciona ao container
+                            let card = criarCard(pokemom);
+                            container.appendChild(card);
+                        })
                 );
 
-            // Aguarda todas as promessas terminarem (todos os pokémons carregados)
-            return Promise.all(promises);
-        })
-        .then( () => {
-            // Após o carregamento, pega todos os botões de favorito exibidos
-            let btnsFav = document.getElementsByClassName("fav");
+                // Aguarda todas as promessas terminarem (todos os pokémons carregados)
+                return Promise.all(promises);
+            })
+            .then(() => {
+                // Após o carregamento, pega todos os botões de favorito exibidos
+                let btnsFav = document.getElementsByClassName("fav");
 
-            // Marca visualmente os pokémons que já estão nos favoritos
-            for(let btn of btnsFav){
-                if(favoritos.includes(btn.id)){
-                    btn.classList.add("true");
-                }
-            }
-
-            // Adiciona eventos de clique aos botões de favorito
-            for(let btn of btnsFav){
-                btn.addEventListener("click", function(){
-                    // Se ainda não está favoritado, adiciona
-                    if(!favoritos.includes(btn.id)){
-                        adicionarPokemomFav(btn.id, btn.getAttribute("data-tipo"));
+                // Marca visualmente os pokémons que já estão nos favoritos
+                for (let btn of btnsFav) {
+                    if (favoritos.includes(btn.id)) {
                         btn.classList.add("true");
                     }
-                    // Se já está, remove dos favoritos
-                    else{
-                        removerPokemomFav(btn.id);
-                        btn.classList.remove("true");
-                    }
-                    // Mostra o array de favoritos atualizado no console
-                    console.log(favoritos);
-                })
-            }
-        })
-        .catch((e) => {
-            // Se der erro em qualquer etapa, mostra no console e exibe mensagem de falha
-            console.log("ERRO: " + e);
-            container.innerHTML = `
+                }
+
+                // Adiciona eventos de clique aos botões de favorito
+                for (let btn of btnsFav) {
+                    btn.addEventListener("click", function () {
+                        // Se ainda não está favoritado, adiciona
+                        if (!favoritos.includes(btn.id)) {
+                            adicionarPokemomFav(btn.id, btn.getAttribute("data-tipo"));
+                            btn.classList.add("true");
+                        }
+                        // Se já está, remove dos favoritos
+                        else {
+                            removerPokemomFav(btn.id);
+                            btn.classList.remove("true");
+                        }
+                        // Mostra o array de favoritos atualizado no console
+                        console.log(favoritos);
+                    })
+                }
+            })
+            .catch((e) => {
+                // Se der erro em qualquer etapa, mostra no console e exibe mensagem de falha
+                console.log("ERRO: " + e);
+                container.innerHTML = `
             <p style="text-align: center;">Não foi Possível Carregar Pokemons!</p>
-            ` 
-        })
+            `
+            })
     }
     // Caso o filtro atual seja um tipo específico (ex: fire, water, grass...)
-    else{
+    else {
         filtrarPokemons(16, 0 + 16 * paginaAtual, tipoAtual)
-        .then(pokemons => {
-            if(!pokemons){
-                throw new Error("Não foi possivel carregar pokemons!");
-            }
-            console.log("passou por aqui");
+            .then(pokemons => {
+                if (!pokemons) {
+                    throw new Error("Não foi possivel carregar pokemons!");
+                }
 
-            // Mesma lógica: cria e carrega todos os cards do tipo filtrado
-            const promises = pokemons.map(p => 
-                carregarPokemom(p)
-                    .then(pokemom => {
-                        let card = criarCard(pokemom);
-                        container.appendChild(card);
-                    })
+                // Mesma lógica: cria e carrega todos os cards do tipo filtrado
+                const promises = pokemons.map(p =>
+                    carregarPokemom(p)
+                        .then(pokemom => {
+                            let card = criarCard(pokemom);
+                            container.appendChild(card);
+                        })
                 )
 
-            return Promise.all(promises);
-        })
-        .then( () => {
-            let btnsFav = document.getElementsByClassName("fav");
+                return Promise.all(promises);
+            })
+            .then(() => {
+                let btnsFav = document.getElementsByClassName("fav");
 
-            // Marca os favoritos salvos
-            for(let btn of btnsFav){
-                if(favoritos.includes(btn.id)){
-                    btn.classList.add("true");
-                }
-            }
-
-            // Adiciona ou remove favoritos ao clicar
-            for(let btn of btnsFav){
-                btn.addEventListener("click", function(){
-                    if(!favoritos.includes(btn.id)){
-                        adicionarPokemomFav(btn.id, btn.getAttribute("data-tipo"));
+                // Marca os favoritos salvos
+                for (let btn of btnsFav) {
+                    if (favoritos.includes(btn.id)) {
                         btn.classList.add("true");
                     }
-                    else{
-                        removerPokemomFav(btn.id);
-                        btn.classList.remove("true");
-                    }
-                    console.log(favoritos);
-                })
-            }
-        })
-        .catch((e) => {
-            console.log("ERRO: " + e);
-            container.innerHTML = `
+                }
+
+                // Adiciona ou remove favoritos ao clicar
+                for (let btn of btnsFav) {
+                    btn.addEventListener("click", function () {
+                        if (!favoritos.includes(btn.id)) {
+                            adicionarPokemomFav(btn.id, btn.getAttribute("data-tipo"));
+                            btn.classList.add("true");
+                        }
+                        else {
+                            removerPokemomFav(btn.id);
+                            btn.classList.remove("true");
+                        }
+                        console.log(favoritos);
+                    })
+                }
+            })
+            .catch((e) => {
+                console.log("ERRO: " + e);
+                container.innerHTML = `
             <p style="text-align: center;">Não foi Possível Carregar Pokemons!</p>
-            ` 
-        })
+            `
+            })
     }
 }
 
 // Adiciona um pokémon aos favoritos e salva no localStorage
-function adicionarPokemomFav(pokemom){
+function adicionarPokemomFav(pokemom) {
     favoritos.push(pokemom);
     localStorage.setItem("favoritosPokemons", JSON.stringify(favoritos));
 }
 
 // Remove um pokémon dos favoritos e atualiza o localStorage
-function removerPokemomFav(pokemom){
+function removerPokemomFav(pokemom) {
     favoritos.splice(favoritos.indexOf(pokemom), 1);
     localStorage.setItem("favoritosPokemons", JSON.stringify(favoritos));
 }
@@ -210,31 +209,31 @@ document.addEventListener('DOMContentLoaded', function () {
     const filtros = document.querySelectorAll('.container-filtro .filtro');
 
     filtros.forEach(filtro => {
-      // Quando um filtro é clicado...
-      filtro.addEventListener('click', function () {
-        // Remove a classe 'ativo' de todos os filtros
-        filtros.forEach(f => f.classList.remove('ativo'));
+        // Quando um filtro é clicado...
+        filtro.addEventListener('click', function () {
+            // Remove a classe 'ativo' de todos os filtros
+            filtros.forEach(f => f.classList.remove('ativo'));
 
-        // Marca o filtro clicado como ativo
-        this.classList.add('ativo');
+            // Marca o filtro clicado como ativo
+            this.classList.add('ativo');
 
-        // Atualiza o tipo atual com base no atributo data-tipo do botão
-        tipoAtual = this.getAttribute('data-tipo');
+            // Atualiza o tipo atual com base no atributo data-tipo do botão
+            tipoAtual = this.getAttribute('data-tipo');
 
-        // Atualiza a tela de acordo com o novo filtro
-        atualizarContainer();
-      });
+            // Atualiza a tela de acordo com o novo filtro
+            atualizarContainer();
+        });
     });
-  });
+});
 
 // Função que busca pokémons filtrados por tipo na API
-async function filtrarPokemons(maximoPokemons, offset, tipo){
+async function filtrarPokemons(maximoPokemons, offset, tipo) {
     // Requisição à API de tipo (ex: /type/fire)
     let resposta = await fetch(`https://pokeapi.co/api/v2/type/${tipo}`);
     resposta = await resposta.json();
 
     // Se não houver resposta, retorna lista vazia
-    if(!resposta){
+    if (!resposta) {
         return [];
     }
 

@@ -25,7 +25,7 @@
         <h1>POKEDEX</h1>
       </div>
       <div class="item-navegacao-centro">
-        <a id="btn-pesquisar" href=""><img src="../assets/pesquisa-icon.png">Pesquisar</a>
+        <a id="btn-pesquisar" href="procura.html"><img src="../assets/pesquisa-icon.png">Pesquisar</a>
         <a href="index.html"><img src="../assets/home.png">Inicio</a>
         <a href="favoritos.html"><img src="../assets/Pokeball.png">Favoritos</a>
         <a href="pokemons.html"><img src="../assets/pikachu-icon.png">Pokémons</a>
@@ -61,18 +61,18 @@
 
     <div class="comparar-info">
       <div class="pokedex-ui left grass">
-          <div class="img-moldura moldura-pokedex-ui">
-            <img src="">
-            <div class="tipo-pokemom">
-              <span>Grass</span>
-            </div>
-          </div>
-          <h4>Bulbasaur</h4>
-          <div class="stats">
-            <span>HP:</span><span class="hp">45</span><br>
-            <span>Atack:</span><span class="atack">50</span>
+        <div class="img-moldura moldura-pokedex-ui">
+          <img src="">
+          <div class="tipo-pokemom">
+            <span>Grass</span>
           </div>
         </div>
+        <h4>Bulbasaur</h4>
+        <div class="stats">
+          <span>HP:</span><span class="hp">45</span><br>
+          <span>Atack:</span><span class="atack">50</span>
+        </div>
+      </div>
 
       <div class="visualizacao-comparacao-container">
         <div class="visualizacao-comparacao">
@@ -104,18 +104,18 @@
       </div>
 
       <div class="pokedex-ui right fire">
-          <div class="img-moldura moldura-pokedex-ui">
-            <img src="">
-            <div class="tipo-pokemom">
-              <span>Fire</span>
-            </div>
-          </div>
-          <h4>Charmander</h4>
-          <div class="stats">
-            <span>HP:</span><span class="hp">45</span><br>
-            <span>Atack:</span><span class="atack">50</span>
+        <div class="img-moldura moldura-pokedex-ui">
+          <img src="">
+          <div class="tipo-pokemom">
+            <span>Fire</span>
           </div>
         </div>
+        <h4>Charmander</h4>
+        <div class="stats">
+          <span>HP:</span><span class="hp">45</span><br>
+          <span>Atack:</span><span class="atack">50</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -126,9 +126,9 @@
     </div>
   </footer>
 </body>
-
+<script src="../JavaScript/pesquisa.js"></script>
 <script>
-  document.getElementsByClassName('btn-menu-nav')[0].addEventListener('click', function(){
+  document.getElementsByClassName('btn-menu-nav')[0].addEventListener('click', function () {
     document.getElementsByClassName('btn-menu-nav')[0].classList.toggle('show')
     document.getElementsByClassName('item-navegacao-centro')[0].classList.toggle('mostrar')
   })

@@ -1,164 +1,236 @@
 /* Estilização que diferencia cada filtro e tipo de Pokemom */
 
 
-.normal{
+.normal {
     background: var(--cor-normal);
-}.normal .img-moldura{
+}
+
+.normal .img-moldura {
     background-color: #E7E6DA;
 }
-.normal .tipo-pokemom,.normal #descricao{
+
+.normal .tipo-pokemom,
+.normal #descricao {
     background-color: #D7D5BF;
 }
 
-.fire{
+.fire {
     background: #CC1302;
-}.fire .img-moldura{
-    background-color: #FF9B6D;  
 }
-.fire .tipo-pokemom,.fire #descricao{
+
+.fire .img-moldura {
+    background-color: #FF9B6D;
+}
+
+.fire .tipo-pokemom,
+.fire #descricao {
     background-color: #FF3E0A;
 }
 
-.fighting{
+.fighting {
     background: #922622;
-}.fighting .img-moldura{
+}
+
+.fighting .img-moldura {
     background-color: #FBCFCD;
 }
-.fighting .tipo-pokemom,.fighting #descricao{
+
+.fighting .tipo-pokemom,
+.fighting #descricao {
     background-color: #E6534D;
 }
 
-.psychic{
+.psychic {
     background: #C80E4A;
-}.psychic .img-moldura{
+}
+
+.psychic .img-moldura {
     background-color: #FECCE3;
 }
-.psychic .tipo-pokemom,.psychic #descricao{
+
+.psychic .tipo-pokemom,
+.psychic #descricao {
     background-color: #F63E88;
 }
 
-.fairy{
+.fairy {
     background: #813350;
-}.fairy .img-moldura{
+}
+
+.fairy .img-moldura {
     background-color: #F2D8E6;
 }
-.fairy .tipo-pokemom,.fairy #descricao{
+
+.fairy .tipo-pokemom,
+.fairy #descricao {
     background-color: #C96B96;
 }
 
-.poison{
+.poison {
     background: #792F77;
-}.poison .img-moldura{
-    background-color: #DE91E1;
 }
-.poison .tipo-pokemom,.poison #descricao{
+
+.poison .img-moldura {
     background-color: #DE91E1;
 }
 
-.ghost{
+.poison .tipo-pokemom,
+.poison #descricao {
+    background-color: #DE91E1;
+}
+
+.ghost {
     background: #8057AB;
-}.ghost .img-moldura{
+}
+
+.ghost .img-moldura {
     background-color: #DAD3F2;
 }
-.ghost .tipo-pokemom,.ghost #descricao{
+
+.ghost .tipo-pokemom,
+.ghost #descricao {
     background-color: #B09ADF;
 }
 
-.steel{
+.steel {
     background: #615D76;
-}.steel .img-moldura{
+}
+
+.steel .img-moldura {
     background-color: #D9DAE4;
 }
-.steel .tipo-pokemom,.steel #descricao{
+
+.steel .tipo-pokemom,
+.steel #descricao {
     background-color: #8989A8;
 }
 
-.ice{
+.ice {
     background: #2D6C71;
-}.ice .img-moldura{
-    background-color: #BAE7E5;
 }
-.ice .tipo-pokemom,.ice #descricao{
+
+.ice .img-moldura {
     background-color: #BAE7E5;
 }
 
-.flying{
+.ice .tipo-pokemom,
+.ice #descricao {
+    background-color: #BAE7E5;
+}
+
+.flying {
     background: #5D2AAD;
-}.flying .img-moldura{
+}
+
+.flying .img-moldura {
     background-color: #DFD8FC;
 }
-.flying .tipo-pokemom,.flying #descricao{
+
+.flying .tipo-pokemom,
+.flying #descricao {
     background-color: #8F66EC;
 }
 
-.water{
+.water {
     background: #253183;
-}.water .img-moldura{
+}
+
+.water .img-moldura {
     background-color: #99B9F7;
 }
-.water .tipo-pokemom,.water #descricao{
+
+.water .tipo-pokemom,
+.water #descricao {
     background-color: #6390F0;
 }
 
-.dragon{
+.dragon {
     background: #3F139F;
-}.dragon .img-moldura{
+}
+
+.dragon .img-moldura {
     background-color: #D8D3FF;
 }
-.dragon .tipo-pokemom,.dragon #descricao{
+
+.dragon .tipo-pokemom,
+.dragon #descricao {
     background-color: #682BFC;
 }
 
-.electric{
+.electric {
     background: #A46A04;
-}.electric .img-moldura{
+}
+
+.electric .img-moldura {
     background-color: #F7EC8F;
 }
-.electric .tipo-pokemom,.electric #descricao{
+
+.electric .tipo-pokemom,
+.electric #descricao {
     background-color: #FFEB43;
 }
 
-.bug{
+.bug {
     background: #687813;
-}.bug .img-moldura{
+}
+
+.bug .img-moldura {
     background-color: #F0F6A0;
 }
-.bug .tipo-pokemom,.bug #descricao{
+
+.bug .tipo-pokemom,
+.bug #descricao {
     background-color: #D0E03B;
 }
 
-.grass{
+.grass {
     background: #076D0D;
-}.grass .img-moldura{
+}
+
+.grass .img-moldura {
     background-color: #98FF90;
 }
-.grass .tipo-pokemom,.grass #descricao{
+
+.grass .tipo-pokemom,
+.grass #descricao {
     background-color: #1EFE1D;
 }
 
-.ground{
+.ground {
     background: #9B5022;
-}.ground .img-moldura{
+}
+
+.ground .img-moldura {
     background-color: #ECD89B;
 }
-.ground .tipo-pokemom,.ground #descricao{
+
+.ground .tipo-pokemom,
+.ground #descricao {
     background-color: #D38D2D;
 }
 
-.rock{
+.rock {
     background: #816327;
-}.rock .img-moldura{
+}
+
+.rock .img-moldura {
     background-color: #E6E3A2;
 }
-.rock .tipo-pokemom,.rock #descricao{
+
+.rock .tipo-pokemom,
+.rock #descricao {
     background-color: #CABA45;
 }
 
-.dark{
+.dark {
     background: #675041;
-}.dark .img-moldura{
+}
+
+.dark .img-moldura {
     background-color: #D2CAB6;
 }
-.dark .tipo-pokemom,.dark #descricao{
+
+.dark .tipo-pokemom,
+.dark #descricao {
     background-color: #957D5D;
 }

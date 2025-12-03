@@ -1,37 +1,44 @@
-    h3{
+    h3 {
         font-size: 2vw;
         -webkit-text-stroke: 1.5px #000000;
     }
-    span{
+
+    span {
         font-size: 1.3vw;
         font-weight: bolder;
         -webkit-text-stroke: 1px #000000;
     }
-    .secao-comparacao{
+
+    .secao-comparacao {
         width: 80%;
         margin: 50px 0;
         margin-left: 10%;
     }
-    .escolha-pokemom > h2{
+
+    .escolha-pokemom>h2 {
         text-align: center;
     }
-    .escolha-pokemom > div{
+
+    .escolha-pokemom>div {
         display: flex;
         justify-content: space-between;
     }
-    .comparar-info{
+
+    .comparar-info {
         display: flex;
         justify-content: space-between;
         border-radius: 24px;
         border: 0px solid #000000;
         background-color: #ff2c57;
     }
-    .visualizacao-comparacao-container{
+
+    .visualizacao-comparacao-container {
         width: 33%;
         display: flex;
         align-items: center;
     }
-    .visualizacao-comparacao{
+
+    .visualizacao-comparacao {
         width: 90%;
         height: 90%;
         margin-left: 5%;
@@ -39,18 +46,21 @@
         flex-direction: column;
         justify-content: space-evenly;
     }
-    .linhas-comparacao{
+
+    .linhas-comparacao {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    .pokedex{
+
+    .pokedex {
         width: 100%;
         display: flex;
         border: 4px solid #000000;
         border-radius: 30px;
     }
-    .pokedex-ui{
+
+    .pokedex-ui {
         position: relative;
         width: 33%;
         height: 0;
@@ -60,21 +70,26 @@
         border-radius: 24px;
         border: 3px solid #000000;
     }
-    .stats *{
+
+    .stats * {
         font-family: 'Press Start 2P', system-ui;
         font-size: 1.1vw;
     }
-    .stats, .pokedex-ui h4{
+
+    .stats,
+    .pokedex-ui h4 {
         transform: translate(-50%, -50%);
     }
-    .pokedex-ui h4{
+
+    .pokedex-ui h4 {
         position: absolute;
         top: 77.5%;
         left: 50%;
         font-size: 1.8vw;
         -webkit-text-stroke: 2px #000000;
     }
-    .moldura-pokedex-ui{
+
+    .moldura-pokedex-ui {
         position: absolute;
         display: block;
         width: 87%;
@@ -82,7 +97,8 @@
         top: 16%;
         left: 5.5%;
     }
-    .tipo-pokemom{
+
+    .tipo-pokemom {
         position: absolute;
         border-radius: 150px;
         height: 8%;
@@ -94,33 +110,39 @@
         align-items: center;
         justify-content: center;
     }
-    .tipo-pokemom span{
+
+    .tipo-pokemom span {
         font-size: 2vw;
     }
-    .stats{
+
+    .stats {
         position: absolute;
         top: 89%;
         left: 50%;
     }
-    .ganhador{
-        -webkit-text-stroke: 0.2px #f9f900;
-    }
-    .ganhador > *{
+
+    .ganhador {
         -webkit-text-stroke: 0.2px #f9f900;
     }
 
-    @media screen and (max-width: 1500px){
-        .secao-comparacao{
+    .ganhador>* {
+        -webkit-text-stroke: 0.2px #f9f900;
+    }
+
+    @media screen and (max-width: 1500px) {
+        .secao-comparacao {
             display: flex;
             flex-direction: column;
             gap: 200px;
             align-items: center;
         }
-        .escolha-pokemom > div{
+
+        .escolha-pokemom>div {
             flex-direction: column;
             align-items: center;
         }
-        .pokedex-ui{
+
+        .pokedex-ui {
             width: 150px;
             height: 150px;
             padding: 0px;
@@ -128,52 +150,65 @@
             position: absolute;
             top: -40%;
         }
-        .left{
+
+        .left {
             left: 0px;
         }
-        .right{
+
+        .right {
             right: 3px;
         }
-        .comparar-info{
+
+        .comparar-info {
             width: 380px;
             height: 400px;
             position: relative;
         }
-        .moldura-pokedex-ui{
+
+        .moldura-pokedex-ui {
             width: 100%;
             height: 100%;
             top: 0%;
             left: 0%;
             background: none;
         }
-        h4{
+
+        h4 {
             display: none;
         }
-        .stats{
+
+        .stats {
             display: none;
         }
-        .tipo-pokemom{
+
+        .tipo-pokemom {
             width: 80px;
             height: 25px;
         }
-        .tipo-pokemom > span{
+
+        .tipo-pokemom>span {
             font-size: 1rem;
         }
-        .comparar{
+
+        .comparar {
             position: relative;
         }
-        .visualizacao-comparacao-container{
+
+        .visualizacao-comparacao-container {
             width: 100%;
             border: 3px solid black;
             border-radius: 20px;
         }
-        .visualizacao-comparacao span{
+
+        .visualizacao-comparacao span {
             font-size: 0.9rem;
         }
-        .visualizacao-comparacao h3{
+
+        .visualizacao-comparacao h3 {
             font-size: 1.4rem;
         }
-        .img-moldura{
-            transform: translate(0,0);
+
+        .img-moldura {
+            transform: translate(0, 0);
         }
     }

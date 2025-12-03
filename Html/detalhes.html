@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../Css/estilo.css">
   <link rel="stylesheet" href="../Css/cores-pokemom.css">
   <link rel="stylesheet" href="../Css/destalhes.css"> <!-- Possível erro de digitação: "destalhes" -->
-  
+
   <!-- Importação das fontes do Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +31,7 @@
 
       <!-- Centro da barra com links de navegação -->
       <div class="item-navegacao-centro">
-        <a id="btn-pesquisar" href=""><img src="../assets/pesquisa-icon.png">Pesquisar</a>
+        <a id="btn-pesquisar" href="procura.html"><img src="../assets/pesquisa-icon.png">Pesquisar</a>
         <a href="index.html"><img src="../assets/home.png">Inicio</a>
         <a href="favoritos.html"><img src="../assets/Pokeball.png">Favoritos</a>
         <a href="pokemons.html"><img src="../assets/pikachu-icon.png">Pokémons</a>
@@ -40,7 +40,7 @@
       <!-- Lado direito da barra: campo de busca e botão menu -->
       <div class="item-navegacao-direita">
         <input type="text" id="barra-pesquisa" placeholder="Buscar"> <!-- Campo de pesquisa -->
-        
+
         <!-- Botão tipo "hamburguer" para menu responsivo -->
         <div class="btn-menu-nav">
           <div></div>
@@ -56,55 +56,55 @@
   <section class="info-container">
     <div class="pokedex">
 
-        <!-- Parte visual da pokedex (lado esquerdo) -->
-        <div class="pokedex-ui">
-          <!-- Moldura da imagem do Pokémon -->
-          <div class="img-moldura moldura-pokedex-ui">
-            <img id="poke-img" src=""> <!-- Imagem do Pokémon -->
-            <div class="tipo-pokemom">
-              <span class="type">Grass</span> <!-- Tipo principal (exemplo) -->
-            </div>
-          </div>
-
-          <!-- Nome do Pokémon -->
-          <h4 class="nome">Bulbasaur</h4>
-
-          <!-- Estatísticas básicas -->
-          <div class="stats">
-            <span>HP:</span><span class="hp">45</span><br>
-            <span>Atack:</span><span class="atack">50</span>
+      <!-- Parte visual da pokedex (lado esquerdo) -->
+      <div class="pokedex-ui">
+        <!-- Moldura da imagem do Pokémon -->
+        <div class="img-moldura moldura-pokedex-ui">
+          <img id="poke-img" src=""> <!-- Imagem do Pokémon -->
+          <div class="tipo-pokemom">
+            <span class="type">Grass</span> <!-- Tipo principal (exemplo) -->
           </div>
         </div>
 
-        <!-- Informações detalhadas do Pokémon -->
-        <div class="pokedex-info">
-          <h2 class="nome">Single Strike Gigantamax Urshifu</h2> <!-- Nome completo -->
-          
-          <!-- Peso e altura -->
-          <div><span>Weight:</span><span id="weight">6.9</span>KG</div>
-          <div><span>Height:</span><span id="height">0.7</span>M</div>
+        <!-- Nome do Pokémon -->
+        <h4 class="nome">Bulbasaur</h4>
 
-          <!-- Tipo -->
-          <div><span>Type:</span><span class="type">Grass</span></div>
-
-          <!-- Descrição -->
-          <h4>Description</h4>
-          <p id="descricao">
-            A strange seed was planted on its back at birth.The plant sprouts and grows with this POKéMON.
-          </p>
-
-          <!-- Linha de evoluções -->
-          <div class="evolucoes-container">
-            <img class="evo" src=""> <!-- Primeira forma -->
-            <span>-></span>
-            <img class="evo" src=""> <!-- Segunda forma -->
-            <span>-></span>
-            <img class="evo" src=""> <!-- Terceira forma -->
-          </div>
-
-          <!-- Ícone para favoritar -->
-          <img class="fav" title="Favoritar" draggable="false" src="../assets/fav.png">
+        <!-- Estatísticas básicas -->
+        <div class="stats">
+          <span>HP:</span><span class="hp">45</span><br>
+          <span>Atack:</span><span class="atack">50</span>
         </div>
+      </div>
+
+      <!-- Informações detalhadas do Pokémon -->
+      <div class="pokedex-info">
+        <h2 class="nome">Single Strike Gigantamax Urshifu</h2> <!-- Nome completo -->
+
+        <!-- Peso e altura -->
+        <div><span>Weight:</span><span id="weight">6.9</span>KG</div>
+        <div><span>Height:</span><span id="height">0.7</span>M</div>
+
+        <!-- Tipo -->
+        <div><span>Type:</span><span class="type">Grass</span></div>
+
+        <!-- Descrição -->
+        <h4>Description</h4>
+        <p id="descricao">
+          A strange seed was planted on its back at birth.The plant sprouts and grows with this POKéMON.
+        </p>
+
+        <!-- Linha de evoluções -->
+        <div class="evolucoes-container">
+          <img class="evo" src=""> <!-- Primeira forma -->
+          <span>-></span>
+          <img class="evo" src=""> <!-- Segunda forma -->
+          <span>-></span>
+          <img class="evo" src=""> <!-- Terceira forma -->
+        </div>
+
+        <!-- Ícone para favoritar -->
+        <img class="fav" title="Favoritar" draggable="false" src="../assets/fav.png">
+      </div>
     </div>
 
     <!-- Seção de comparação de Pokémon -->
@@ -125,9 +125,10 @@
   </footer>
 </body>
 
+<script src="../JavaScript/pesquisa.js"></script>
 <!-- Script para controlar o menu responsivo -->
 <script>
-  document.getElementsByClassName('btn-menu-nav')[0].addEventListener('click', function(){
+  document.getElementsByClassName('btn-menu-nav')[0].addEventListener('click', function () {
     document.getElementsByClassName('btn-menu-nav')[0].classList.toggle('show')
     document.getElementsByClassName('item-navegacao-centro')[0].classList.toggle('mostrar')
   })
