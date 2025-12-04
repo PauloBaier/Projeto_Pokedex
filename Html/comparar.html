@@ -60,60 +60,64 @@
     </div>
 
     <div class="comparar-info">
-      <div class="pokedex-ui left grass">
+      <div class="pokedex-ui left normal">
         <div class="img-moldura moldura-pokedex-ui">
           <img src="">
           <div class="tipo-pokemom">
-            <span>Grass</span>
+            <span></span>
           </div>
         </div>
-        <h4>Bulbasaur</h4>
+        <h4></h4>
         <div class="stats">
-          <span>HP:</span><span class="hp">45</span><br>
-          <span>Atack:</span><span class="atack">50</span>
+          <span>HP:</span><span class="hp"></span><br>
+          <span>Atack:</span><span class="attack"></span>
         </div>
       </div>
 
       <div class="visualizacao-comparacao-container">
         <div class="visualizacao-comparacao">
           <div class="linhas-comparacao">
-            <h3>Bulbasaur</h3>
-            <h3>Charmander</h3>
+            <h3 id="nome1">Bulbasaur</h3>
+            <h3 id="nome2">Charmander</h3>
           </div>
           <div class="linhas-comparacao">
-            <span>Weight: <span>6.9</span>KG</span>>
-            <span class="ganhador">Weight: <span>8.5</span>KG</span>
+            <span>Weight: <span id="peso1"></span>KG</span>
+            <span class="indicador-peso"></span>
+            <span>Weight: <span id="peso2"></span>KG</span>
           </div>
           <div class="linhas-comparacao">
-            <span>Height: <span>0.7</span>M</span>
-            <span>Height: <span>0.6</span>M</span>
+            <span>Height: <span id="altura1"></span>M</span>
+            <span class="indicador-altura"></span>
+            <span>Height: <span id="altura2"></span>M</span>
           </div>
           <div class="linhas-comparacao">
-            <span>HP: <span>45</span></span>
-            <span>HP: <span>39</span></span>
+            <span>HP: <span id="hp1"></span></span>
+            <span class="indicador-hp"></span>
+            <span>HP: <span id="hp2"></span></span>
           </div>
           <div class="linhas-comparacao">
-            <span>Atack: <span>50</span></span>
-            <span>Atack: <span>52</span></span>
+            <span>Atack: <span id="attack1"></span></span>
+            <span class="indicador-attack"></span>
+            <span>Atack: <span id="attack2"></span></span>
           </div>
           <div class="linhas-comparacao">
-            <span>Type: <span>Grass</span></span>
-            <span>Type: <span>Fire</span></span>
+            <span>Type: <span id="tipo1"></span></span>
+            <span>Type: <span id="tipo2"></span></span>
           </div>
         </div>
       </div>
 
-      <div class="pokedex-ui right fire">
+      <div class="pokedex-ui right normal">
         <div class="img-moldura moldura-pokedex-ui">
           <img src="">
           <div class="tipo-pokemom">
-            <span>Fire</span>
+            <span></span>
           </div>
         </div>
-        <h4>Charmander</h4>
+        <h4></h4>
         <div class="stats">
-          <span>HP:</span><span class="hp">45</span><br>
-          <span>Atack:</span><span class="atack">50</span>
+          <span>HP:</span><span class="hp"></span><br>
+          <span>Atack:</span><span class="attack"></span>
         </div>
       </div>
     </div>
@@ -126,6 +130,7 @@
     </div>
   </footer>
 </body>
+<script type="module" src="../JavaScript/comparar.js"></script>
 <script src="../JavaScript/pesquisa.js"></script>
 <script>
   document.getElementsByClassName('btn-menu-nav')[0].addEventListener('click', function () {

@@ -51,6 +51,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        text-transform: capitalize;
     }
 
     .pokedex {
@@ -79,6 +80,7 @@
     .stats,
     .pokedex-ui h4 {
         transform: translate(-50%, -50%);
+        text-transform: capitalize;
     }
 
     .pokedex-ui h4 {

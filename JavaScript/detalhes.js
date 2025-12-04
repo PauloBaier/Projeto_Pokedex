@@ -1,3 +1,30 @@
+let favoritos = JSON.parse(localStorage.getItem("favoritosPokemons")) || [];
+
+document.addEventListener("DOMContentLoaded", () => {
+    let fav = document.querySelector(".fav");
+    let buscaComparar = document.getElementById("busca-comparacao");
+    if(favoritos.includes(urlPokemom())){
+        fav.classList.toggle("true");
+    }
+    fav.addEventListener("click", () => {
+        if(favoritos.includes(urlPokemom())){
+            removerPokemomFav(urlPokemom);
+            fav.classList.toggle("true");
+        }
+        else if(!favoritos.includes(urlPokemom())){
+            adicionarPokemomFav(urlPokemom());
+            fav.classList.toggle("true");
+        }
+    })
+
+    document.getElementById("comparar").addEventListener("click", () => {
+        if(buscaComparar.value != ""){
+            window.location.href = `comparar.html?pokemom1=${urlPokemom()}&pokemom2=${buscaComparar.value}`;
+        }
+    })
+
+})
+
 // Carrega as informações do pokemom enviado na url
 obterInformacoesPokemom(urlPokemom())
     .then(dados => {
@@ -18,10 +45,6 @@ function urlPokemom() {
     // obtém o valor do parâmetro 'pokemom'
     const pokemom = parametrosUrl.get('pokemom');
 
-
-    // verifica se o valor do parâmetro é válido
-    // se for nulo, vazio ou indefinido, retorna um pokemom padrão
-    // caso contrário, retorna o valor do parâmetro
     return pokemom;
 }
 // Função para obter as informações do pokemom na API
@@ -55,7 +78,8 @@ function carregarInformacoesPokemoms(pokemom) {
 
     // adiciona a classe do tipo do pokemom na pokedex
     let evolucoes;
-
+    document.querySelector(".hp").textContent = pokemom.stats.find(s => s.stat.name == "hp").base_stat;
+    document.querySelector(".atack").textContent = pokemom.stats.find(s => s.stat.name == "attack").base_stat;
     // adiciona a classe do tipo do pokemom na pokedex
     document.getElementsByClassName("pokedex")[0].classList.add(pokemom.types[0].type.name);
 
@@ -74,9 +98,8 @@ function carregarInformacoesPokemoms(pokemom) {
     // define a imagem do pokemom
     document.getElementById("poke-img").src = pokemom.sprites.other["official-artwork"].front_default;
     // define o número do pokemom
-    Array.from(document.getElementsByClassName("type")).forEach(tipo => {
-        // define o tipo do pokemom
-        tipo.textContent = pokemom.types[0].type.name;
+    Array.from(document.getElementsByClassName("type")).forEach((tipo,index) => {
+        index == 1 ? tipo.textContent = pokemom.types.map(t => t.type.name).join(", ") : tipo.textContent = pokemom.types[0].type.name;
     })
     // define o número do pokemom
     document.getElementById("weight").textContent = pokemom.weight / 10;
@@ -150,4 +173,13 @@ async function carregarCadeiaDeEvo(url) {
         // exibe o erro no console
         console.log(e);
     }
+}
+
+function adicionarPokemomFav(pokemom) {
+    favoritos.push(pokemom);
+    localStorage.setItem("favoritosPokemons", JSON.stringify(favoritos));
+}
+function removerPokemomFav(pokemom) {
+    favoritos.splice(favoritos.indexOf(pokemom), 1);
+    localStorage.setItem("favoritosPokemons", JSON.stringify(favoritos));
 }
